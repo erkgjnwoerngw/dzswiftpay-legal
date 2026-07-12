@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +9,6 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
@@ -17,208 +16,240 @@
         <span class="nav-brand">DZ SwiftPay</span>
       </a>
       <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html" class="active">Terms of Service</a>
-        <a href="support.html">Support</a>
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a>
+        <a href="terms.html" class="active" data-i18n="nav_terms">Terms of Service</a>
+        <a href="support.html" data-i18n="nav_support">Support</a>
+      </div>
+      <div class="lang-switcher">
+        <button class="lang-btn lang-btn-active" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">FR</button>
+        <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">عربي</button>
       </div>
     </div>
   </nav>
 
   <main class="page">
 
-    <!-- Page header -->
     <div class="page-header">
-      <div class="eyebrow">Legal</div>
-      <h1>Terms of Service</h1>
-      <div class="meta">DZ SwiftPay &nbsp;·&nbsp; Last updated July 2026</div>
-      <p class="intro">
-        Please read these Terms of Service carefully before using DZ SwiftPay.
-        By creating an account or using our services, you agree to be bound by these terms.
-        If you do not agree, do not use our services.
-      </p>
+      <div class="eyebrow" data-i18n="page_eyebrow">Legal</div>
+      <h1 data-i18n="page_title">Terms of Service</h1>
+      <div class="meta" data-i18n="page_meta">DZ SwiftPay · Last updated July 2026</div>
+      <p class="intro" data-i18n="page_intro">Please read these Terms of Service carefully before using DZ SwiftPay. By creating an account or using our services, you agree to be bound by these terms. If you do not agree, do not use our services.</p>
     </div>
 
-    <!-- Sections -->
     <div class="card">
       <div class="card-inner">
 
         <div class="section">
-          <h2>1. Account Usage</h2>
-          <p>
-            DZ SwiftPay accounts are for personal, non-commercial use by individual account
-            holders aged 18 or older. You are responsible for maintaining the confidentiality
-            of your login credentials, PIN, and any security information associated with
-            your account.
-          </p>
-          <p>
-            You agree to provide accurate, current, and complete information at registration
-            and to update it promptly if it changes. You may not create more than one account,
-            transfer your account to another person, or allow any other person to access
-            your account.
-          </p>
+          <h2 data-i18n="s1_title">1. Account Usage</h2>
+          <div data-i18n-html="s1_body">
+            <p>DZ SwiftPay accounts are for personal, non-commercial use by individual account holders aged 18 or older. You are responsible for maintaining the confidentiality of your login credentials, PIN, and any security information associated with your account.</p>
+            <p>You agree to provide accurate, current, and complete information at registration and to update it promptly if it changes. You may not create more than one account, transfer your account to another person, or allow any other person to access your account.</p>
+          </div>
         </div>
 
         <div class="section">
-          <h2>2. Transfers</h2>
-          <p>
-            DZ SwiftPay enables peer-to-peer money transfers between verified account holders.
-            By initiating a transfer, you confirm that:
-          </p>
-          <ul>
-            <li>You are the authorised holder of the source account</li>
-            <li>The recipient details you have provided are accurate</li>
-            <li>The funds being transferred are from a legitimate source</li>
-          </ul>
-          <p>
-            Transfers are processed in real time where technically possible. Once a transfer
-            has been completed and the recipient account has been credited, it cannot be
-            reversed by DZ SwiftPay. It is your responsibility to verify recipient details
-            before confirming any transfer.
-          </p>
+          <h2 data-i18n="s2_title">2. Transfers</h2>
+          <div data-i18n-html="s2_body">
+            <p>DZ SwiftPay enables peer-to-peer money transfers between verified account holders. By initiating a transfer, you confirm that:</p>
+            <ul>
+              <li>You are the authorised holder of the source account</li>
+              <li>The recipient details you have provided are accurate</li>
+              <li>The funds being transferred are from a legitimate source</li>
+            </ul>
+            <p>Transfers are processed in real time where technically possible. Once a transfer has been completed and the recipient account has been credited, it cannot be reversed by DZ SwiftPay. It is your responsibility to verify recipient details before confirming any transfer.</p>
+          </div>
         </div>
 
         <div class="section">
-          <h2>3. Fees</h2>
-          <p>
-            Current fee schedules are displayed in the app before you confirm any transaction.
-            Fees may apply to certain transfer types, top-up methods, or premium account
-            features.
-          </p>
-          <p>
-            Fees are deducted from the transaction amount or your available balance at the
-            time the transaction is processed. DZ SwiftPay reserves the right to introduce,
-            modify, or remove fees with 30 days' prior notice to affected users. Continued
-            use of the service after the notice period constitutes acceptance of the revised
-            fees.
-          </p>
+          <h2 data-i18n="s3_title">3. Fees</h2>
+          <div data-i18n-html="s3_body">
+            <p>Current fee schedules are displayed in the app before you confirm any transaction. Fees may apply to certain transfer types, top-up methods, or premium account features.</p>
+            <p>Fees are deducted from the transaction amount or your available balance at the time the transaction is processed. DZ SwiftPay reserves the right to introduce, modify, or remove fees with 30 days' prior notice to affected users. Continued use of the service after the notice period constitutes acceptance of the revised fees.</p>
+          </div>
         </div>
 
         <div class="section">
-          <h2>4. Limits</h2>
-          <p>
-            Transaction and balance limits apply to all accounts and vary according to your
-            KYC verification tier:
-          </p>
-          <ul>
-            <li><strong>Tier 1 (basic)</strong> — Lower daily transfer limits and balance caps</li>
-            <li><strong>Tier 2 (verified)</strong> — Increased limits following successful KYC verification</li>
-            <li><strong>Tier 3 (full)</strong> — Maximum limits available to fully verified accounts</li>
-          </ul>
-          <p>
-            Current limits for each tier are displayed within the app. DZ SwiftPay may adjust
-            limits at any time to comply with regulatory requirements, manage risk, or prevent
-            financial crime. Temporary limits may be applied to accounts under review.
-          </p>
+          <h2 data-i18n="s4_title">4. Limits</h2>
+          <div data-i18n-html="s4_body">
+            <p>Transaction and balance limits apply to all accounts and vary according to your KYC verification tier:</p>
+            <ul>
+              <li><strong>Tier 1 (basic)</strong> — Lower daily transfer limits and balance caps</li>
+              <li><strong>Tier 2 (verified)</strong> — Increased limits following successful KYC verification</li>
+              <li><strong>Tier 3 (full)</strong> — Maximum limits available to fully verified accounts</li>
+            </ul>
+            <p>Current limits for each tier are displayed within the app. DZ SwiftPay may adjust limits at any time to comply with regulatory requirements, manage risk, or prevent financial crime. Temporary limits may be applied to accounts under review.</p>
+          </div>
         </div>
 
         <div class="section">
-          <h2>5. Prohibited Activities</h2>
-          <p>You agree not to use DZ SwiftPay for:</p>
-          <ul>
-            <li>Any activity that violates Algerian law or applicable international law</li>
-            <li>Money laundering, terrorist financing, or any form of financial crime</li>
-            <li>Purchasing or selling illegal goods, services, or substances</li>
-            <li>Gambling or betting activities where prohibited by law</li>
-            <li>Circumventing currency controls or sanctions</li>
-            <li>Sending funds on behalf of a third party without disclosure</li>
-            <li>Any fraudulent, deceptive, or misleading activity</li>
-            <li>Reverse engineering or attempting to compromise our systems</li>
-          </ul>
-          <p>
-            Violation of these prohibitions may result in immediate account suspension,
-            fund holds, and referral to law enforcement authorities.
-          </p>
+          <h2 data-i18n="s5_title">5. Prohibited Activities</h2>
+          <div data-i18n-html="s5_body">
+            <p>You agree not to use DZ SwiftPay for:</p>
+            <ul>
+              <li>Any activity that violates Algerian law or applicable international law</li>
+              <li>Money laundering, terrorist financing, or any form of financial crime</li>
+              <li>Purchasing or selling illegal goods, services, or substances</li>
+              <li>Gambling or betting activities where prohibited by law</li>
+              <li>Circumventing currency controls or sanctions</li>
+              <li>Sending funds on behalf of a third party without disclosure</li>
+              <li>Any fraudulent, deceptive, or misleading activity</li>
+              <li>Reverse engineering or attempting to compromise our systems</li>
+            </ul>
+            <p>Violation of these prohibitions may result in immediate account suspension, fund holds, and referral to law enforcement authorities.</p>
+          </div>
         </div>
 
         <div class="section">
-          <h2>6. Account Suspension</h2>
-          <p>
-            DZ SwiftPay reserves the right to suspend, restrict, or terminate your account
-            at any time without prior notice if:
-          </p>
-          <ul>
-            <li>We suspect fraudulent, illegal, or prohibited activity</li>
-            <li>You breach any of these Terms of Service</li>
-            <li>We are required to do so by a regulatory authority or court order</li>
-            <li>Your account poses a risk to other users or the platform</li>
-            <li>Your identity verification cannot be confirmed or maintained</li>
-          </ul>
-          <p>
-            Where permitted by law, we will notify you of any suspension and the reason for
-            it. Funds in a suspended account are held securely and will be returned to you
-            following the resolution of any investigation, subject to applicable legal holds.
-          </p>
+          <h2 data-i18n="s6_title">6. Account Suspension</h2>
+          <div data-i18n-html="s6_body">
+            <p>DZ SwiftPay reserves the right to suspend, restrict, or terminate your account at any time without prior notice if:</p>
+            <ul>
+              <li>We suspect fraudulent, illegal, or prohibited activity</li>
+              <li>You breach any of these Terms of Service</li>
+              <li>We are required to do so by a regulatory authority or court order</li>
+              <li>Your account poses a risk to other users or the platform</li>
+              <li>Your identity verification cannot be confirmed or maintained</li>
+            </ul>
+            <p>Where permitted by law, we will notify you of any suspension and the reason for it. Funds in a suspended account are held securely and will be returned to you following the resolution of any investigation, subject to applicable legal holds.</p>
+          </div>
         </div>
 
         <div class="section">
-          <h2>7. Disputes</h2>
-          <p>
-            If you believe a transaction on your account was unauthorised, erroneous, or
-            fraudulent, you must notify us within 60 days of the transaction date by
-            contacting <a href="mailto:dzswiftpayapp@gmail.com">dzswiftpayapp@gmail.com</a>.
-          </p>
-          <p>
-            We will investigate all disputes in good faith and aim to provide a resolution
-            within 15 business days. For complex cases involving third-party payment
-            processors or regulatory review, resolution may take longer and we will keep
-            you informed of progress.
-          </p>
-          <p>
-            If you are not satisfied with the outcome of a dispute, you may escalate the
-            matter to the relevant financial regulatory authority in your jurisdiction.
-          </p>
+          <h2 data-i18n="s7_title">7. Disputes</h2>
+          <div data-i18n-html="s7_body">
+            <p>If you believe a transaction on your account was unauthorised, erroneous, or fraudulent, you must notify us within 60 days of the transaction date by contacting <a href="mailto:dzswiftpayapp@gmail.com">dzswiftpayapp@gmail.com</a>.</p>
+            <p>We will investigate all disputes in good faith and aim to provide a resolution within 15 business days. For complex cases involving third-party payment processors or regulatory review, resolution may take longer and we will keep you informed of progress.</p>
+            <p>If you are not satisfied with the outcome of a dispute, you may escalate the matter to the relevant financial regulatory authority in your jurisdiction.</p>
+          </div>
         </div>
 
         <div class="section">
-          <h2>8. Liability</h2>
-          <p>
-            DZ SwiftPay provides its services on an "as available" basis. To the fullest
-            extent permitted by law:
-          </p>
-          <ul>
-            <li>We are not liable for losses arising from your failure to keep account credentials secure</li>
-            <li>We are not liable for delays or failures caused by circumstances beyond our reasonable control, including network outages or regulatory interventions</li>
-            <li>We are not liable for indirect, incidental, or consequential losses, including lost profits</li>
-            <li>Our total liability to you for any claim arising from use of our services is limited to the value of the transaction giving rise to the claim</li>
-          </ul>
-          <p>
-            Nothing in these Terms excludes liability for death or personal injury caused by
-            our negligence, fraud, or any liability that cannot be excluded under applicable
-            law.
-          </p>
+          <h2 data-i18n="s8_title">8. Liability</h2>
+          <div data-i18n-html="s8_body">
+            <p>DZ SwiftPay provides its services on an "as available" basis. To the fullest extent permitted by law:</p>
+            <ul>
+              <li>We are not liable for losses arising from your failure to keep account credentials secure</li>
+              <li>We are not liable for delays or failures caused by circumstances beyond our reasonable control, including network outages or regulatory interventions</li>
+              <li>We are not liable for indirect, incidental, or consequential losses, including lost profits</li>
+              <li>Our total liability to you for any claim arising from use of our services is limited to the value of the transaction giving rise to the claim</li>
+            </ul>
+            <p>Nothing in these Terms excludes liability for death or personal injury caused by our negligence, fraud, or any liability that cannot be excluded under applicable law.</p>
+          </div>
         </div>
 
       </div>
     </div>
 
-    <!-- Contact -->
     <a href="mailto:dzswiftpayapp@gmail.com" class="contact-card">
       <div class="contact-icon">✉️</div>
       <div>
-        <div class="contact-label">Legal &amp; disputes</div>
+        <div class="contact-label" data-i18n="contact_label">Legal &amp; disputes</div>
         <div class="contact-email">dzswiftpayapp@gmail.com</div>
-        <div class="contact-note">We respond within 2 business days</div>
+        <div class="contact-note" data-i18n="contact_note">We respond within 2 business days</div>
       </div>
     </a>
 
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
       <a href="index.html" class="footer-logo">
         <div class="footer-logo-mark">DZ</div>
         <span class="footer-brand">DZ SwiftPay</span>
       </a>
-      <span class="footer-copy">&copy; 2026 DZ SwiftPay</span>
+      <span class="footer-copy" data-i18n="footer_copy">&copy; 2026 DZ SwiftPay</span>
       <div class="footer-links">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="support.html">Support</a>
+        <a href="privacy.html" data-i18n="nav_privacy">Privacy</a>
+        <a href="terms.html" data-i18n="nav_terms">Terms</a>
+        <a href="support.html" data-i18n="nav_support">Support</a>
       </div>
     </div>
   </footer>
 
+  <script>
+  window.TRANSLATIONS = {
+    en: {
+      doc_title: 'Terms of Service — DZ SwiftPay',
+      nav_home: 'Home', nav_privacy: 'Privacy Policy',
+      nav_terms: 'Terms of Service', nav_support: 'Support',
+      page_eyebrow: 'Legal', page_title: 'Terms of Service',
+      page_meta:  'DZ SwiftPay · Last updated July 2026',
+      page_intro: 'Please read these Terms of Service carefully before using DZ SwiftPay. By creating an account or using our services, you agree to be bound by these terms. If you do not agree, do not use our services.',
+      s1_title: '1. Account Usage',
+      s1_body: '<p>DZ SwiftPay accounts are for personal, non-commercial use by individual account holders aged 18 or older. You are responsible for maintaining the confidentiality of your login credentials, PIN, and any security information associated with your account.</p><p>You agree to provide accurate, current, and complete information at registration and to update it promptly if it changes. You may not create more than one account, transfer your account to another person, or allow any other person to access your account.</p>',
+      s2_title: '2. Transfers',
+      s2_body: '<p>DZ SwiftPay enables peer-to-peer money transfers between verified account holders. By initiating a transfer, you confirm that:</p><ul><li>You are the authorised holder of the source account</li><li>The recipient details you have provided are accurate</li><li>The funds being transferred are from a legitimate source</li></ul><p>Transfers are processed in real time where technically possible. Once a transfer has been completed and the recipient account has been credited, it cannot be reversed by DZ SwiftPay. It is your responsibility to verify recipient details before confirming any transfer.</p>',
+      s3_title: '3. Fees',
+      s3_body: '<p>Current fee schedules are displayed in the app before you confirm any transaction. Fees may apply to certain transfer types, top-up methods, or premium account features.</p><p>Fees are deducted from the transaction amount or your available balance at the time the transaction is processed. DZ SwiftPay reserves the right to introduce, modify, or remove fees with 30 days\' prior notice to affected users. Continued use of the service after the notice period constitutes acceptance of the revised fees.</p>',
+      s4_title: '4. Limits',
+      s4_body: '<p>Transaction and balance limits apply to all accounts and vary according to your KYC verification tier:</p><ul><li><strong>Tier 1 (basic)</strong> — Lower daily transfer limits and balance caps</li><li><strong>Tier 2 (verified)</strong> — Increased limits following successful KYC verification</li><li><strong>Tier 3 (full)</strong> — Maximum limits available to fully verified accounts</li></ul><p>Current limits for each tier are displayed within the app. DZ SwiftPay may adjust limits at any time to comply with regulatory requirements, manage risk, or prevent financial crime. Temporary limits may be applied to accounts under review.</p>',
+      s5_title: '5. Prohibited Activities',
+      s5_body: '<p>You agree not to use DZ SwiftPay for:</p><ul><li>Any activity that violates Algerian law or applicable international law</li><li>Money laundering, terrorist financing, or any form of financial crime</li><li>Purchasing or selling illegal goods, services, or substances</li><li>Gambling or betting activities where prohibited by law</li><li>Circumventing currency controls or sanctions</li><li>Sending funds on behalf of a third party without disclosure</li><li>Any fraudulent, deceptive, or misleading activity</li><li>Reverse engineering or attempting to compromise our systems</li></ul><p>Violation of these prohibitions may result in immediate account suspension, fund holds, and referral to law enforcement authorities.</p>',
+      s6_title: '6. Account Suspension',
+      s6_body: '<p>DZ SwiftPay reserves the right to suspend, restrict, or terminate your account at any time without prior notice if:</p><ul><li>We suspect fraudulent, illegal, or prohibited activity</li><li>You breach any of these Terms of Service</li><li>We are required to do so by a regulatory authority or court order</li><li>Your account poses a risk to other users or the platform</li><li>Your identity verification cannot be confirmed or maintained</li></ul><p>Where permitted by law, we will notify you of any suspension and the reason for it. Funds in a suspended account are held securely and will be returned to you following the resolution of any investigation, subject to applicable legal holds.</p>',
+      s7_title: '7. Disputes',
+      s7_body: '<p>If you believe a transaction on your account was unauthorised, erroneous, or fraudulent, you must notify us within 60 days of the transaction date by contacting <a href="mailto:dzswiftpayapp@gmail.com">dzswiftpayapp@gmail.com</a>.</p><p>We will investigate all disputes in good faith and aim to provide a resolution within 15 business days. For complex cases, resolution may take longer and we will keep you informed of progress.</p><p>If you are not satisfied with the outcome of a dispute, you may escalate the matter to the relevant financial regulatory authority in your jurisdiction.</p>',
+      s8_title: '8. Liability',
+      s8_body: '<p>DZ SwiftPay provides its services on an "as available" basis. To the fullest extent permitted by law:</p><ul><li>We are not liable for losses arising from your failure to keep account credentials secure</li><li>We are not liable for delays or failures caused by circumstances beyond our reasonable control, including network outages or regulatory interventions</li><li>We are not liable for indirect, incidental, or consequential losses, including lost profits</li><li>Our total liability to you for any claim arising from use of our services is limited to the value of the transaction giving rise to the claim</li></ul><p>Nothing in these Terms excludes liability for death or personal injury caused by our negligence, fraud, or any liability that cannot be excluded under applicable law.</p>',
+      contact_label: 'Legal & disputes', contact_note: 'We respond within 2 business days',
+      footer_copy: '© 2026 DZ SwiftPay'
+    },
+    fr: {
+      doc_title: 'Conditions d\'utilisation — DZ SwiftPay',
+      nav_home: 'Accueil', nav_privacy: 'Confidentialité',
+      nav_terms: 'Conditions d\'utilisation', nav_support: 'Assistance',
+      page_eyebrow: 'Mentions légales', page_title: 'Conditions d\'utilisation',
+      page_meta:  'DZ SwiftPay · Dernière mise à jour juillet 2026',
+      page_intro: 'Veuillez lire attentivement ces conditions d\'utilisation avant d\'utiliser DZ SwiftPay. En créant un compte ou en utilisant nos services, vous acceptez d\'être lié par ces conditions. Si vous n\'acceptez pas, n\'utilisez pas nos services.',
+      s1_title: '1. Utilisation du compte',
+      s1_body: '<p>Les comptes DZ SwiftPay sont réservés à un usage personnel et non commercial par des titulaires individuels âgés de 18 ans ou plus. Vous êtes responsable du maintien de la confidentialité de vos identifiants de connexion, de votre code PIN et de toute information de sécurité associée à votre compte.</p><p>Vous vous engagez à fournir des informations exactes, à jour et complètes lors de l\'inscription et à les mettre à jour rapidement en cas de changement. Vous ne pouvez pas créer plus d\'un compte, transférer votre compte à une autre personne ou permettre à une autre personne d\'accéder à votre compte.</p>',
+      s2_title: '2. Transferts',
+      s2_body: '<p>DZ SwiftPay permet les virements d\'argent de pair à pair entre titulaires de comptes vérifiés. En initiant un virement, vous confirmez que :</p><ul><li>Vous êtes le titulaire autorisé du compte source</li><li>Les coordonnées du bénéficiaire que vous avez fournies sont exactes</li><li>Les fonds transférés proviennent d\'une source légitime</li></ul><p>Les virements sont traités en temps réel dans la mesure du possible. Une fois un virement effectué et le compte du bénéficiaire crédité, il ne peut plus être annulé par DZ SwiftPay. Il vous incombe de vérifier les coordonnées du bénéficiaire avant de confirmer tout virement.</p>',
+      s3_title: '3. Frais',
+      s3_body: '<p>Les barèmes de frais en vigueur sont affichés dans l\'application avant que vous confirmiez toute transaction. Des frais peuvent s\'appliquer à certains types de virements, méthodes de recharge ou fonctionnalités de compte premium.</p><p>Les frais sont déduits du montant de la transaction ou de votre solde disponible au moment du traitement. DZ SwiftPay se réserve le droit d\'introduire, de modifier ou de supprimer des frais moyennant un préavis de 30 jours aux utilisateurs concernés. La poursuite de l\'utilisation du service après le délai de préavis constitue une acceptation des frais révisés.</p>',
+      s4_title: '4. Limites',
+      s4_body: '<p>Des limites de transaction et de solde s\'appliquent à tous les comptes et varient selon votre niveau de vérification KYC :</p><ul><li><strong>Niveau 1 (de base)</strong> — Limites de virement journalières et plafonds de solde réduits</li><li><strong>Niveau 2 (vérifié)</strong> — Limites augmentées après vérification KYC réussie</li><li><strong>Niveau 3 (complet)</strong> — Limites maximales disponibles pour les comptes entièrement vérifiés</li></ul><p>Les limites actuelles pour chaque niveau sont affichées dans l\'application. DZ SwiftPay peut ajuster les limites à tout moment pour se conformer aux exigences réglementaires, gérer les risques ou prévenir la criminalité financière. Des limites temporaires peuvent être appliquées aux comptes en cours d\'examen.</p>',
+      s5_title: '5. Activités interdites',
+      s5_body: '<p>Vous acceptez de ne pas utiliser DZ SwiftPay pour :</p><ul><li>Toute activité qui viole le droit algérien ou le droit international applicable</li><li>Le blanchiment d\'argent, le financement du terrorisme ou toute forme de criminalité financière</li><li>L\'achat ou la vente de biens, services ou substances illégaux</li><li>Les jeux d\'argent ou les paris là où ils sont interdits par la loi</li><li>Contourner les contrôles des changes ou les sanctions</li><li>Envoyer des fonds pour le compte d\'un tiers sans divulgation</li><li>Toute activité frauduleuse, trompeuse ou mensongère</li><li>La rétro-ingénierie ou toute tentative de compromettre nos systèmes</li></ul><p>Le non-respect de ces interdictions peut entraîner une suspension immédiate du compte, un blocage des fonds et un signalement aux autorités compétentes.</p>',
+      s6_title: '6. Suspension du compte',
+      s6_body: '<p>DZ SwiftPay se réserve le droit de suspendre, restreindre ou résilier votre compte à tout moment sans préavis si :</p><ul><li>Nous soupçonnons une activité frauduleuse, illégale ou interdite</li><li>Vous enfreignez l\'une des présentes conditions d\'utilisation</li><li>Une autorité réglementaire ou une décision de justice nous y oblige</li><li>Votre compte présente un risque pour d\'autres utilisateurs ou la plateforme</li><li>La vérification de votre identité ne peut être confirmée ou maintenue</li></ul><p>Dans la mesure permise par la loi, nous vous informerons de toute suspension et de ses motifs. Les fonds d\'un compte suspendu sont conservés en toute sécurité et vous seront restitués à l\'issue de toute enquête, sous réserve des blocages légaux applicables.</p>',
+      s7_title: '7. Litiges',
+      s7_body: '<p>Si vous estimez qu\'une transaction sur votre compte était non autorisée, erronée ou frauduleuse, vous devez nous en informer dans les 60 jours suivant la date de la transaction en contactant <a href="mailto:dzswiftpayapp@gmail.com">dzswiftpayapp@gmail.com</a>.</p><p>Nous examinerons tous les litiges de bonne foi et viserons à fournir une résolution dans les 15 jours ouvrables. Pour les cas complexes, la résolution peut prendre plus de temps et nous vous tiendrons informé de l\'avancement.</p><p>Si vous n\'êtes pas satisfait du résultat d\'un litige, vous pouvez le porter devant l\'autorité de réglementation financière compétente dans votre juridiction.</p>',
+      s8_title: '8. Responsabilité',
+      s8_body: '<p>DZ SwiftPay fournit ses services « tels que disponibles ». Dans toute la mesure permise par la loi :</p><ul><li>Nous ne sommes pas responsables des pertes résultant de votre manquement à sécuriser vos identifiants de compte</li><li>Nous ne sommes pas responsables des retards ou défaillances causés par des circonstances indépendantes de notre volonté raisonnable</li><li>Nous ne sommes pas responsables des pertes indirectes, accessoires ou consécutives, y compris les pertes de profits</li><li>Notre responsabilité totale envers vous pour toute réclamation découlant de l\'utilisation de nos services est limitée à la valeur de la transaction à l\'origine de la réclamation</li></ul><p>Rien dans ces Conditions n\'exclut la responsabilité pour décès ou dommages corporels causés par notre négligence, fraude ou toute responsabilité ne pouvant être exclue en vertu du droit applicable.</p>',
+      contact_label: 'Litiges et questions juridiques', contact_note: 'Nous répondons dans les 2 jours ouvrables',
+      footer_copy: '© 2026 DZ SwiftPay'
+    },
+    ar: {
+      doc_title: 'شروط الخدمة — DZ SwiftPay',
+      nav_home: 'الرئيسية', nav_privacy: 'سياسة الخصوصية',
+      nav_terms: 'شروط الخدمة', nav_support: 'الدعم',
+      page_eyebrow: 'قانوني', page_title: 'شروط الخدمة',
+      page_meta:  'DZ SwiftPay · آخر تحديث يوليو 2026',
+      page_intro: 'يُرجى قراءة شروط الخدمة هذه بعناية قبل استخدام DZ SwiftPay. بإنشائك حساباً أو استخدامك لخدماتنا، فإنك توافق على الالتزام بهذه الشروط. إذا كنت لا توافق عليها، فلا تستخدم خدماتنا.',
+      s1_title: '١. استخدام الحساب',
+      s1_body: '<p>حسابات DZ SwiftPay مخصصة للاستخدام الشخصي غير التجاري من قِبَل أصحاب الحسابات الأفراد الذين تجاوزوا الثامنة عشرة من العمر. أنت مسؤول عن الحفاظ على سرية بيانات تسجيل الدخول ورمز PIN وأي معلومات أمنية مرتبطة بحسابك.</p><p>توافق على تقديم معلومات دقيقة وحديثة وكاملة عند التسجيل وتحديثها فوراً عند تغيّرها. لا يحق لك إنشاء أكثر من حساب واحد أو نقل حسابك لشخص آخر أو السماح لأي شخص آخر بالوصول إليه.</p>',
+      s2_title: '٢. التحويلات',
+      s2_body: '<p>تتيح منصة DZ SwiftPay إجراء تحويلات مالية مباشرة بين حسابات موثَّقة. بإجرائك تحويلاً، فإنك تؤكد أن:</p><ul><li>أنت صاحب الحساب المصدر المخوَّل</li><li>بيانات المُستلِم التي قدمتها صحيحة</li><li>الأموال المحوَّلة مصدرها مشروع</li></ul><p>تُعالَج التحويلات في الوقت الفعلي حيثما أمكن ذلك. بمجرد اكتمال التحويل وإضافة المبلغ إلى حساب المستلم، لا يمكن عكسه من قِبَل DZ SwiftPay. تقع على عاتقك مسؤولية التحقق من بيانات المستلم قبل تأكيد أي تحويل.</p>',
+      s3_title: '٣. الرسوم',
+      s3_body: '<p>تُعرض جداول الرسوم الحالية في التطبيق قبل تأكيد أي معاملة. قد تُطبَّق رسوم على أنواع معينة من التحويلات أو طرق الشحن أو ميزات الحساب المتميز.</p><p>تُخصَم الرسوم من مبلغ المعاملة أو رصيدك المتاح وقت معالجة المعاملة. تحتفظ منصة DZ SwiftPay بالحق في إدخال الرسوم أو تعديلها أو إلغائها مع إشعار مسبق مدته 30 يوماً للمستخدمين المتأثرين. يُعدّ استمرار استخدام الخدمة بعد انتهاء فترة الإشعار قبولاً بالرسوم المعدَّلة.</p>',
+      s4_title: '٤. الحدود',
+      s4_body: '<p>تنطبق حدود المعاملات والرصيد على جميع الحسابات وتتفاوت وفق مستوى التحقق KYC:</p><ul><li><strong>المستوى الأول (أساسي)</strong> — حدود تحويل يومية منخفضة وحدود رصيد مقيَّدة</li><li><strong>المستوى الثاني (موثَّق)</strong> — حدود أعلى عقب اجتياز التحقق من الهوية بنجاح</li><li><strong>المستوى الثالث (كامل)</strong> — الحدود القصوى المتاحة للحسابات الموثَّقة بالكامل</li></ul><p>تُعرض الحدود الحالية لكل مستوى داخل التطبيق. يجوز لـ DZ SwiftPay تعديل الحدود في أي وقت للامتثال للمتطلبات التنظيمية أو إدارة المخاطر أو منع الجرائم المالية. يجوز تطبيق حدود مؤقتة على الحسابات قيد المراجعة.</p>',
+      s5_title: '٥. الأنشطة المحظورة',
+      s5_body: '<p>توافق على عدم استخدام DZ SwiftPay في:</p><ul><li>أي نشاط يخالف القانون الجزائري أو القانون الدولي المعمول به</li><li>غسيل الأموال أو تمويل الإرهاب أو أي شكل من أشكال الجرائم المالية</li><li>شراء أو بيع البضائع أو الخدمات أو المواد غير المشروعة</li><li>القمار أو المراهنة حيثما يحظره القانون</li><li>التحايل على ضوابط العملة أو العقوبات الدولية</li><li>إرسال الأموال نيابةً عن طرف ثالث دون الإفصاح</li><li>أي نشاط احتيالي أو مضلّل أو خادع</li><li>الهندسة العكسية أو أي محاولة للمساس بأنظمتنا</li></ul><p>قد يترتب على انتهاك هذه المحظورات تعليق فوري للحساب وتجميد الأموال والإحالة إلى الجهات الأمنية المختصة.</p>',
+      s6_title: '٦. تعليق الحساب',
+      s6_body: '<p>تحتفظ منصة DZ SwiftPay بالحق في تعليق حسابك أو تقييده أو إنهائه في أي وقت دون إشعار مسبق إذا:</p><ul><li>اشتبهنا في نشاط احتيالي أو غير مشروع أو محظور</li><li>انتهكت أياً من هذه الشروط</li><li>أوجبت علينا ذلك جهة تنظيمية أو أمر قضائي</li><li>شكّل حسابك خطراً على مستخدمين آخرين أو على المنصة</li><li>تعذّر التحقق من هويتك أو الحفاظ عليه</li></ul><p>حيثما يسمح القانون بذلك، سنبلّغك بأي تعليق وسببه. يُحتفظ بالأموال في حساب موقوف بشكل آمن وتُعاد إليك بعد الانتهاء من أي تحقيق، مع مراعاة أي قيود قانونية سارية.</p>',
+      s7_title: '٧. النزاعات',
+      s7_body: '<p>إذا اعتقدت أن معاملةً في حسابك كانت غير مصرَّح بها أو خاطئة أو احتيالية، يجب إبلاغنا بذلك في غضون 60 يوماً من تاريخ المعاملة عبر مراسلتنا على <a href="mailto:dzswiftpayapp@gmail.com">dzswiftpayapp@gmail.com</a>.</p><p>سنتحقق من جميع النزاعات بحسن نية ونسعى إلى تقديم حل خلال 15 يوم عمل. في الحالات المعقدة، قد يستغرق الحل وقتاً أطول وسنبقيك مطّلعاً على مراحل التقدم.</p><p>إذا لم تكن راضياً عن نتيجة النزاع، يمكنك الرجوع إلى الجهة التنظيمية المالية المختصة في ولايتك القضائية.</p>',
+      s8_title: '٨. المسؤولية',
+      s8_body: '<p>تقدّم منصة DZ SwiftPay خدماتها على أساس "بحسب الإتاحة". في أقصى ما يسمح به القانون:</p><ul><li>لا نتحمل المسؤولية عن الخسائر الناجمة عن إخفاقك في تأمين بيانات حسابك</li><li>لا نتحمل المسؤولية عن التأخيرات أو الأعطال الناجمة عن ظروف خارج نطاق سيطرتنا المعقولة</li><li>لا نتحمل المسؤولية عن الخسائر غير المباشرة أو العرضية أو التبعية بما فيها خسارة الأرباح</li><li>تقتصر مسؤوليتنا الإجمالية تجاهك عن أي مطالبة ناشئة عن استخدام خدماتنا على قيمة المعاملة التي أفضت إلى تلك المطالبة</li></ul><p>لا يُقصَى بموجب هذه الشروط أي مسؤولية عن الوفاة أو الإصابة الشخصية الناجمة عن إهمالنا أو احتيالنا أو أي مسؤولية لا يمكن استبعادها بموجب القانون المعمول به.</p>',
+      contact_label: 'النزاعات والاستفسارات القانونية', contact_note: 'نردّ خلال يومَي عمل',
+      footer_copy: '© 2026 DZ SwiftPay'
+    }
+  };
+  </script>
+  <script src="i18n.js"></script>
 </body>
 </html>

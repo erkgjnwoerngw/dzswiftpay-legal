@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +9,6 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
@@ -17,99 +16,94 @@
         <span class="nav-brand">DZ SwiftPay</span>
       </a>
       <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-        <a href="support.html">Support</a>
+        <a href="index.html" class="active" data-i18n="nav_home">Home</a>
+        <a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="nav_terms">Terms of Service</a>
+        <a href="support.html" data-i18n="nav_support">Support</a>
+      </div>
+      <div class="lang-switcher">
+        <button class="lang-btn lang-btn-active" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">FR</button>
+        <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">عربي</button>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-badge">🇩🇿 Made for Algeria</div>
-      <h1>Fast, secure <span>digital banking</span><br>in your pocket</h1>
-      <p>
-        DZ SwiftPay lets you send money instantly, top up mobile credit,
-        manage virtual cards, and track your budget — all from one app.
-      </p>
+      <div class="hero-badge" data-i18n="hero_badge">🇩🇿 Made for Algeria</div>
+      <h1 data-i18n-html="hero_h1">Fast, secure <span>digital banking</span><br>in your pocket</h1>
+      <p data-i18n="hero_p">DZ SwiftPay lets you send money instantly, top up mobile credit, manage virtual cards, and track your budget — all from one app.</p>
       <div class="hero-actions">
-        <a href="support.html" class="btn btn-white">Get Help</a>
-        <a href="privacy.html" class="btn btn-outline">Privacy Policy</a>
+        <a href="support.html" class="btn btn-white" data-i18n="hero_btn1">Get Help</a>
+        <a href="privacy.html" class="btn btn-outline" data-i18n="hero_btn2">Privacy Policy</a>
       </div>
     </div>
   </section>
 
-  <!-- Main content -->
   <main class="page">
 
-    <!-- Features -->
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">💸</div>
-        <div class="feature-title">Instant Transfers</div>
-        <div class="feature-desc">Send and receive money between DZ SwiftPay accounts in real time.</div>
+        <div class="feature-title" data-i18n="feat_1_title">Instant Transfers</div>
+        <div class="feature-desc" data-i18n="feat_1_desc">Send and receive money between DZ SwiftPay accounts in real time.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📱</div>
-        <div class="feature-title">Mobile Top-Up</div>
-        <div class="feature-desc">Recharge any Algerian mobile number directly from your balance.</div>
+        <div class="feature-title" data-i18n="feat_2_title">Mobile Top-Up</div>
+        <div class="feature-desc" data-i18n="feat_2_desc">Recharge any Algerian mobile number directly from your balance.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">💳</div>
-        <div class="feature-title">Virtual Cards</div>
-        <div class="feature-desc">Create and manage virtual cards for secure online purchases.</div>
+        <div class="feature-title" data-i18n="feat_3_title">Virtual Cards</div>
+        <div class="feature-desc" data-i18n="feat_3_desc">Create and manage virtual cards for secure online purchases.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📊</div>
-        <div class="feature-title">Budgets &amp; Goals</div>
-        <div class="feature-desc">Set monthly budgets, track spending, and save towards goals.</div>
+        <div class="feature-title" data-i18n="feat_4_title">Budgets &amp; Goals</div>
+        <div class="feature-desc" data-i18n="feat_4_desc">Set monthly budgets, track spending, and save towards goals.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📷</div>
-        <div class="feature-title">QR Payments</div>
-        <div class="feature-desc">Generate or scan QR codes to pay and receive money instantly.</div>
+        <div class="feature-title" data-i18n="feat_5_title">QR Payments</div>
+        <div class="feature-desc" data-i18n="feat_5_desc">Generate or scan QR codes to pay and receive money instantly.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🔒</div>
-        <div class="feature-title">Bank-Grade Security</div>
-        <div class="feature-desc">TLS encryption, Face ID, PIN protection, and full KYC verification.</div>
+        <div class="feature-title" data-i18n="feat_6_title">Bank-Grade Security</div>
+        <div class="feature-desc" data-i18n="feat_6_desc">TLS encryption, Face ID, PIN protection, and full KYC verification.</div>
       </div>
     </div>
 
-    <!-- Legal links -->
     <div class="legal-links">
-      <h2>Legal &amp; Support</h2>
-
+      <h2 data-i18n="legal_title">Legal &amp; Support</h2>
       <a href="privacy.html" class="legal-link-row">
         <div class="legal-link-left">
           <div class="legal-link-icon">🔐</div>
           <div>
-            <div class="legal-link-title">Privacy Policy</div>
-            <div class="legal-link-sub">How we collect, use, and protect your data</div>
+            <div class="legal-link-title" data-i18n="legal_link1_title">Privacy Policy</div>
+            <div class="legal-link-sub" data-i18n="legal_link1_sub">How we collect, use, and protect your data</div>
           </div>
         </div>
         <span class="legal-link-arrow">›</span>
       </a>
-
       <a href="terms.html" class="legal-link-row">
         <div class="legal-link-left">
           <div class="legal-link-icon">📄</div>
           <div>
-            <div class="legal-link-title">Terms of Service</div>
-            <div class="legal-link-sub">Rules for using DZ SwiftPay and your account</div>
+            <div class="legal-link-title" data-i18n="legal_link2_title">Terms of Service</div>
+            <div class="legal-link-sub" data-i18n="legal_link2_sub">Rules for using DZ SwiftPay and your account</div>
           </div>
         </div>
         <span class="legal-link-arrow">›</span>
       </a>
-
       <a href="support.html" class="legal-link-row">
         <div class="legal-link-left">
           <div class="legal-link-icon">💬</div>
           <div>
-            <div class="legal-link-title">Help &amp; Support</div>
-            <div class="legal-link-sub">FAQs, contact support, and troubleshooting</div>
+            <div class="legal-link-title" data-i18n="legal_link3_title">Help &amp; Support</div>
+            <div class="legal-link-sub" data-i18n="legal_link3_sub">FAQs, contact support, and troubleshooting</div>
           </div>
         </div>
         <span class="legal-link-arrow">›</span>
@@ -118,21 +112,121 @@
 
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
       <a href="index.html" class="footer-logo">
         <div class="footer-logo-mark">DZ</div>
         <span class="footer-brand">DZ SwiftPay</span>
       </a>
-      <span class="footer-copy">&copy; 2026 DZ SwiftPay</span>
+      <span class="footer-copy" data-i18n="footer_copy">&copy; 2026 DZ SwiftPay</span>
       <div class="footer-links">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="support.html">Support</a>
+        <a href="privacy.html" data-i18n="nav_privacy">Privacy</a>
+        <a href="terms.html" data-i18n="nav_terms">Terms</a>
+        <a href="support.html" data-i18n="nav_support">Support</a>
       </div>
     </div>
   </footer>
 
+  <script>
+  window.TRANSLATIONS = {
+    en: {
+      doc_title:      'DZ SwiftPay — Digital Banking for Algeria',
+      nav_home:       'Home',
+      nav_privacy:    'Privacy Policy',
+      nav_terms:      'Terms of Service',
+      nav_support:    'Support',
+      hero_badge:     '🇩🇿 Made for Algeria',
+      hero_h1:        'Fast, secure <span>digital banking</span><br>in your pocket',
+      hero_p:         'DZ SwiftPay lets you send money instantly, top up mobile credit, manage virtual cards, and track your budget — all from one app.',
+      hero_btn1:      'Get Help',
+      hero_btn2:      'Privacy Policy',
+      feat_1_title:   'Instant Transfers',
+      feat_1_desc:    'Send and receive money between DZ SwiftPay accounts in real time.',
+      feat_2_title:   'Mobile Top-Up',
+      feat_2_desc:    'Recharge any Algerian mobile number directly from your balance.',
+      feat_3_title:   'Virtual Cards',
+      feat_3_desc:    'Create and manage virtual cards for secure online purchases.',
+      feat_4_title:   'Budgets & Goals',
+      feat_4_desc:    'Set monthly budgets, track spending, and save towards goals.',
+      feat_5_title:   'QR Payments',
+      feat_5_desc:    'Generate or scan QR codes to pay and receive money instantly.',
+      feat_6_title:   'Bank-Grade Security',
+      feat_6_desc:    'TLS encryption, Face ID, PIN protection, and full KYC verification.',
+      legal_title:    'Legal & Support',
+      legal_link1_title: 'Privacy Policy',
+      legal_link1_sub:   'How we collect, use, and protect your data',
+      legal_link2_title: 'Terms of Service',
+      legal_link2_sub:   'Rules for using DZ SwiftPay and your account',
+      legal_link3_title: 'Help & Support',
+      legal_link3_sub:   'FAQs, contact support, and troubleshooting',
+      footer_copy:    '© 2026 DZ SwiftPay'
+    },
+    fr: {
+      doc_title:      'DZ SwiftPay — Banque numérique pour l\'Algérie',
+      nav_home:       'Accueil',
+      nav_privacy:    'Confidentialité',
+      nav_terms:      'Conditions d\'utilisation',
+      nav_support:    'Assistance',
+      hero_badge:     '🇩🇿 Fait pour l\'Algérie',
+      hero_h1:        'Rapide et sécurisé,<br><span>la banque numérique</span><br>dans votre poche',
+      hero_p:         'DZ SwiftPay vous permet d\'envoyer de l\'argent instantanément, de recharger du crédit mobile, de gérer des cartes virtuelles et de suivre votre budget — tout dans une seule application.',
+      hero_btn1:      'Obtenir de l\'aide',
+      hero_btn2:      'Politique de confidentialité',
+      feat_1_title:   'Transferts instantanés',
+      feat_1_desc:    'Envoyez et recevez de l\'argent entre comptes DZ SwiftPay en temps réel.',
+      feat_2_title:   'Recharge mobile',
+      feat_2_desc:    'Rechargez n\'importe quel numéro mobile algérien directement depuis votre solde.',
+      feat_3_title:   'Cartes virtuelles',
+      feat_3_desc:    'Créez et gérez des cartes virtuelles pour vos achats en ligne sécurisés.',
+      feat_4_title:   'Budgets et objectifs',
+      feat_4_desc:    'Définissez des budgets mensuels, suivez vos dépenses et épargnez pour vos objectifs.',
+      feat_5_title:   'Paiements QR',
+      feat_5_desc:    'Générez ou scannez des codes QR pour payer et recevoir de l\'argent instantanément.',
+      feat_6_title:   'Sécurité bancaire',
+      feat_6_desc:    'Chiffrement TLS, Face ID, protection par code PIN et vérification KYC complète.',
+      legal_title:    'Mentions légales et assistance',
+      legal_link1_title: 'Politique de confidentialité',
+      legal_link1_sub:   'Comment nous collectons, utilisons et protégeons vos données',
+      legal_link2_title: 'Conditions d\'utilisation',
+      legal_link2_sub:   'Règles d\'utilisation de DZ SwiftPay et de votre compte',
+      legal_link3_title: 'Aide et assistance',
+      legal_link3_sub:   'FAQ, support client et guide de dépannage',
+      footer_copy:    '© 2026 DZ SwiftPay'
+    },
+    ar: {
+      doc_title:      'DZ SwiftPay — الخدمات المصرفية الرقمية للجزائر',
+      nav_home:       'الرئيسية',
+      nav_privacy:    'سياسة الخصوصية',
+      nav_terms:      'شروط الخدمة',
+      nav_support:    'الدعم',
+      hero_badge:     '🇩🇿 صُنع للجزائر',
+      hero_h1:        'سريع وآمن،<br><span>خدمات مصرفية رقمية</span><br>في جيبك',
+      hero_p:         'تتيح لك منصة DZ SwiftPay إرسال الأموال فوراً، وشحن رصيد الهاتف المحمول، وإدارة البطاقات الافتراضية، ومتابعة ميزانيتك — كل ذلك من تطبيق واحد.',
+      hero_btn1:      'احصل على مساعدة',
+      hero_btn2:      'سياسة الخصوصية',
+      feat_1_title:   'تحويلات فورية',
+      feat_1_desc:    'أرسل الأموال واستقبلها بين حسابات DZ SwiftPay في الوقت الفعلي.',
+      feat_2_title:   'شحن الهاتف المحمول',
+      feat_2_desc:    'اشحن أي رقم هاتف جزائري مباشرةً من رصيدك.',
+      feat_3_title:   'البطاقات الافتراضية',
+      feat_3_desc:    'أنشئ وأدر البطاقات الافتراضية لمشترياتك الآمنة عبر الإنترنت.',
+      feat_4_title:   'الميزانيات والأهداف',
+      feat_4_desc:    'حدد ميزانيات شهرية، وتتبّع إنفاقك، ووفّر لتحقيق أهدافك.',
+      feat_5_title:   'مدفوعات QR',
+      feat_5_desc:    'أنشئ رموز QR أو امسحها لدفع الأموال واستقبالها فوراً.',
+      feat_6_title:   'أمان على مستوى البنوك',
+      feat_6_desc:    'تشفير TLS، وFace ID، وحماية برمز PIN، والتحقق الكامل من الهوية.',
+      legal_title:    'الشؤون القانونية والدعم',
+      legal_link1_title: 'سياسة الخصوصية',
+      legal_link1_sub:   'كيف نجمع بياناتك ونستخدمها ونحميها',
+      legal_link2_title: 'شروط الخدمة',
+      legal_link2_sub:   'قواعد استخدام DZ SwiftPay وحسابك',
+      legal_link3_title: 'المساعدة والدعم',
+      legal_link3_sub:   'الأسئلة الشائعة والتواصل مع الدعم واستكشاف الأخطاء',
+      footer_copy:    '© 2026 DZ SwiftPay'
+    }
+  };
+  </script>
+  <script src="i18n.js"></script>
 </body>
 </html>

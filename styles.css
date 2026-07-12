@@ -714,3 +714,92 @@ details[open] summary::after {
   .features-grid { grid-template-columns: 1fr; }
   .nav-links a { padding: 6px 6px; font-size: 11px; }
 }
+
+/* ============================================================
+   Language Switcher
+   ============================================================ */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-sub);
+  cursor: pointer;
+  line-height: 1.4;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.lang-btn:hover {
+  background: var(--green-light);
+  color: var(--green);
+  border-color: var(--green-border);
+}
+.lang-btn.lang-btn-active {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+}
+
+/* ============================================================
+   RTL (Arabic) Support
+   ============================================================ */
+
+/* Arabic system fonts render better with slightly more line height */
+:lang(ar) {
+  font-family: 'Segoe UI', Tahoma, 'Arabic Typesetting', 'Geeza Pro', sans-serif;
+}
+:lang(ar) .section p,
+:lang(ar) .faq-answer,
+:lang(ar) .hero p,
+:lang(ar) .page-header .intro {
+  line-height: 1.95;
+}
+
+/* Layout direction flips */
+[dir="rtl"] .nav-inner         { flex-direction: row-reverse; }
+[dir="rtl"] .nav-links         { flex-direction: row-reverse; }
+[dir="rtl"] .nav-logo          { flex-direction: row-reverse; }
+[dir="rtl"] .footer-inner      { flex-direction: row-reverse; }
+[dir="rtl"] .footer-links      { flex-direction: row-reverse; }
+[dir="rtl"] .footer-logo       { flex-direction: row-reverse; }
+[dir="rtl"] .contact-card      { flex-direction: row-reverse; }
+[dir="rtl"] .contact-card > div { text-align: right; }
+[dir="rtl"] .hero-badge        { flex-direction: row-reverse; }
+[dir="rtl"] .hero-actions      { flex-direction: row-reverse; }
+[dir="rtl"] .legal-link-row    { flex-direction: row-reverse; }
+[dir="rtl"] .legal-link-left   { flex-direction: row-reverse; }
+[dir="rtl"] .legal-link-left > div { text-align: right; }
+[dir="rtl"] .faq-section-header { flex-direction: row-reverse; }
+[dir="rtl"] .notice            { flex-direction: row-reverse; }
+[dir="rtl"] .notice > div      { text-align: right; }
+[dir="rtl"] .cta-card          { text-align: center; } /* stays centered */
+
+/* Summary (FAQ) arrows flip in RTL */
+[dir="rtl"] summary { flex-direction: row-reverse; }
+
+/* Text alignment */
+[dir="rtl"] .page-header       { text-align: right; }
+[dir="rtl"] .page-header .intro { text-align: right; }
+[dir="rtl"] .section h2        { text-align: right; }
+[dir="rtl"] .section p         { text-align: right; }
+[dir="rtl"] .section ul        { padding-right: 20px; padding-left: 0; text-align: right; }
+[dir="rtl"] .faq-section-title { text-align: right; }
+[dir="rtl"] .faq-answer        { text-align: right; }
+[dir="rtl"] .faq-answer ul     { padding-right: 20px; padding-left: 0; }
+[dir="rtl"] .feature-card      { text-align: right; }
+[dir="rtl"] .legal-links h2    { text-align: right; }
+[dir="rtl"] .hero              { text-align: center; } /* hero stays centred */
+[dir="rtl"] .notice p          { text-align: right; }
+
+/* lang-switcher itself doesn't flip – always LTR order for UI consistency */
+[dir="rtl"] .lang-switcher     { direction: ltr; }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +9,6 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
@@ -17,204 +16,229 @@
         <span class="nav-brand">DZ SwiftPay</span>
       </a>
       <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="privacy.html" class="active">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-        <a href="support.html">Support</a>
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="privacy.html" class="active" data-i18n="nav_privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="nav_terms">Terms of Service</a>
+        <a href="support.html" data-i18n="nav_support">Support</a>
+      </div>
+      <div class="lang-switcher">
+        <button class="lang-btn lang-btn-active" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">FR</button>
+        <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">عربي</button>
       </div>
     </div>
   </nav>
 
   <main class="page">
 
-    <!-- Page header -->
     <div class="page-header">
-      <div class="eyebrow">Legal</div>
-      <h1>Privacy Policy</h1>
-      <div class="meta">DZ SwiftPay &nbsp;·&nbsp; Last updated July 2026</div>
-      <p class="intro">
-        DZ SwiftPay ("we", "us", or "our") is committed to protecting your personal
-        information. This Privacy Policy explains how we collect, use, disclose, and
-        safeguard your data when you use our mobile application and financial services.
-      </p>
+      <div class="eyebrow" data-i18n="page_eyebrow">Legal</div>
+      <h1 data-i18n="page_title">Privacy Policy</h1>
+      <div class="meta" data-i18n="page_meta">DZ SwiftPay · Last updated July 2026</div>
+      <p class="intro" data-i18n="page_intro">DZ SwiftPay ("we", "us", or "our") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your data when you use our mobile application and financial services.</p>
     </div>
 
-    <!-- Sections -->
     <div class="card">
       <div class="card-inner">
 
         <div class="section">
-          <h2>1. Account Information</h2>
-          <p>
-            When you register for a DZ SwiftPay account we collect your full name, email
-            address, date of birth, phone number, and country of residence. This information
-            is required to create and maintain your account, communicate important notices,
-            and comply with financial services regulations.
-          </p>
-          <p>
-            You may update your personal information at any time through the app. We store
-            account data on encrypted servers located within secure data centres and do not
-            sell your information to third parties.
-          </p>
+          <h2 data-i18n="s1_title">1. Account Information</h2>
+          <div data-i18n-html="s1_body">
+            <p>When you register for a DZ SwiftPay account we collect your full name, email address, date of birth, phone number, and country of residence. This information is required to create and maintain your account, communicate important notices, and comply with financial services regulations.</p>
+            <p>You may update your personal information at any time through the app. We store account data on encrypted servers located within secure data centres and do not sell your information to third parties.</p>
+          </div>
         </div>
 
         <div class="section">
-          <h2>2. Identity Verification (KYC)</h2>
-          <p>
-            To comply with anti-money laundering (AML) and know-your-customer (KYC)
-            obligations under Algerian financial law and applicable international standards,
-            we collect:
-          </p>
-          <ul>
-            <li>A government-issued photo ID (national identity card, passport, or driving licence — front and back)</li>
-            <li>A selfie photograph taken at the time of submission</li>
-          </ul>
-          <p>
-            These documents are transmitted over encrypted connections, stored in a secure
-            document vault, and reviewed solely by our authorised compliance personnel. They
-            are never sold, rented, or shared with third parties except as required by law or
-            a competent regulatory authority. KYC documents are retained for a minimum of
-            five years after account closure as mandated by financial regulations.
-          </p>
+          <h2 data-i18n="s2_title">2. Identity Verification (KYC)</h2>
+          <div data-i18n-html="s2_body">
+            <p>To comply with anti-money laundering (AML) and know-your-customer (KYC) obligations under Algerian financial law and applicable international standards, we collect:</p>
+            <ul>
+              <li>A government-issued photo ID (national identity card, passport, or driving licence — front and back)</li>
+              <li>A selfie photograph taken at the time of submission</li>
+            </ul>
+            <p>These documents are transmitted over encrypted connections, stored in a secure document vault, and reviewed solely by our authorised compliance personnel. They are never sold, rented, or shared with third parties except as required by law or a competent regulatory authority. KYC documents are retained for a minimum of five years after account closure as mandated by financial regulations.</p>
+          </div>
         </div>
 
         <div class="section">
-          <h2>3. Transaction Information</h2>
-          <p>
-            We collect and permanently record all transactions conducted through our platform,
-            including peer-to-peer transfers, mobile top-ups, bill payments, and QR code
-            payments. Recorded data includes transaction amounts, timestamps, sender and
-            recipient identifiers, currency, status, and any reference notes you attach.
-          </p>
-          <p>
-            Transaction records are essential for delivering our services, generating your
-            account statements, resolving disputes, and meeting regulatory reporting
-            requirements. These records are retained for a minimum of five years in accordance
-            with applicable financial law.
-          </p>
+          <h2 data-i18n="s3_title">3. Transaction Information</h2>
+          <div data-i18n-html="s3_body">
+            <p>We collect and permanently record all transactions conducted through our platform, including peer-to-peer transfers, mobile top-ups, bill payments, and QR code payments. Recorded data includes transaction amounts, timestamps, sender and recipient identifiers, currency, status, and any reference notes you attach.</p>
+            <p>Transaction records are essential for delivering our services, generating your account statements, resolving disputes, and meeting regulatory reporting requirements. These records are retained for a minimum of five years in accordance with applicable financial law.</p>
+          </div>
         </div>
 
         <div class="section">
-          <h2>4. Payment Providers</h2>
-          <p>
-            We partner with regulated payment processors, banking institutions, and mobile
-            network operators to execute your transactions. When you initiate a payment or
-            top-up, the minimum necessary transaction data is shared with the relevant partner
-            for the sole purpose of processing that payment.
-          </p>
-          <p>
-            All payment partners operate under binding data processing agreements and are
-            required to maintain security standards equivalent to or exceeding our own. We do
-            not share your data with payment partners for their independent marketing or
-            advertising purposes.
-          </p>
+          <h2 data-i18n="s4_title">4. Payment Providers</h2>
+          <div data-i18n-html="s4_body">
+            <p>We partner with regulated payment processors, banking institutions, and mobile network operators to execute your transactions. When you initiate a payment or top-up, the minimum necessary transaction data is shared with the relevant partner for the sole purpose of processing that payment.</p>
+            <p>All payment partners operate under binding data processing agreements and are required to maintain security standards equivalent to or exceeding our own. We do not share your data with payment partners for their independent marketing or advertising purposes.</p>
+          </div>
         </div>
 
         <div class="section">
-          <h2>5. Fraud Prevention</h2>
-          <p>
-            To protect you and the integrity of our platform, we analyse account and
-            transaction activity for indicators of fraudulent behaviour, unauthorised access,
-            or financial crime. This analysis may involve:
-          </p>
-          <ul>
-            <li>Transaction patterns and amounts</li>
-            <li>Device identifiers and operating system information</li>
-            <li>Account activity timestamps</li>
-            <li>Failed login or authentication attempts</li>
-          </ul>
-          <p>
-            If suspicious activity is detected, we may place a temporary hold on your account,
-            request re-verification, or contact you directly. We may disclose relevant
-            information to law enforcement or financial intelligence authorities when required
-            by law or court order.
-          </p>
+          <h2 data-i18n="s5_title">5. Fraud Prevention</h2>
+          <div data-i18n-html="s5_body">
+            <p>To protect you and the integrity of our platform, we analyse account and transaction activity for indicators of fraudulent behaviour, unauthorised access, or financial crime. This analysis may involve:</p>
+            <ul>
+              <li>Transaction patterns and amounts</li>
+              <li>Device identifiers and operating system information</li>
+              <li>Account activity timestamps</li>
+              <li>Failed login or authentication attempts</li>
+            </ul>
+            <p>If suspicious activity is detected, we may place a temporary hold on your account, request re-verification, or contact you directly. We may disclose relevant information to law enforcement or financial intelligence authorities when required by law or court order.</p>
+          </div>
         </div>
 
         <div class="section">
-          <h2>6. Security</h2>
-          <p>
-            All data transmitted between your device and our servers is encrypted using TLS
-            1.2 or higher. Sensitive data stored on our servers is encrypted at rest using
-            AES-256 encryption.
-          </p>
-          <p>
-            Your account is protected by password authentication and optionally by a device
-            PIN or biometric lock (Face ID / Touch ID). Biometric templates and PIN codes
-            are stored exclusively on your device using the operating system's secure enclave
-            — they are never transmitted to or stored on our servers.
-          </p>
-          <p>
-            In the event of a security incident affecting your personal data, we will notify
-            you within the timeframe required by applicable law.
-          </p>
+          <h2 data-i18n="s6_title">6. Security</h2>
+          <div data-i18n-html="s6_body">
+            <p>All data transmitted between your device and our servers is encrypted using TLS 1.2 or higher. Sensitive data stored on our servers is encrypted at rest using AES-256 encryption.</p>
+            <p>Your account is protected by password authentication and optionally by a device PIN or biometric lock (Face ID / Touch ID). Biometric templates and PIN codes are stored exclusively on your device using the operating system's secure enclave — they are never transmitted to or stored on our servers.</p>
+            <p>In the event of a security incident affecting your personal data, we will notify you within the timeframe required by applicable law.</p>
+          </div>
         </div>
 
         <div class="section">
-          <h2>7. Data Retention</h2>
-          <p>
-            We retain your personal data for as long as your account remains active and for
-            up to seven years after permanent account closure, as required by Algerian
-            financial regulations and international AML standards.
-          </p>
-          <p>
-            Non-mandatory data (such as optional profile information or marketing preferences)
-            is deleted within 90 days of your request. After the applicable retention period,
-            all personal data is securely and irreversibly deleted or anonymised so that it
-            can no longer be attributed to you.
-          </p>
+          <h2 data-i18n="s7_title">7. Data Retention</h2>
+          <div data-i18n-html="s7_body">
+            <p>We retain your personal data for as long as your account remains active and for up to seven years after permanent account closure, as required by Algerian financial regulations and international AML standards.</p>
+            <p>Non-mandatory data (such as optional profile information or marketing preferences) is deleted within 90 days of your request. After the applicable retention period, all personal data is securely and irreversibly deleted or anonymised so that it can no longer be attributed to you.</p>
+          </div>
         </div>
 
         <div class="section">
-          <h2>8. Your Rights</h2>
-          <p>Subject to applicable law, you have the right to:</p>
-          <ul>
-            <li><strong>Access</strong> — request a copy of the personal data we hold about you</li>
-            <li><strong>Rectification</strong> — request correction of inaccurate or incomplete information</li>
-            <li><strong>Erasure</strong> — request deletion of data we are not legally required to retain</li>
-            <li><strong>Restriction</strong> — request that we limit how we process your data in certain circumstances</li>
-            <li><strong>Portability</strong> — receive your data in a structured, commonly used format</li>
-            <li><strong>Objection</strong> — object to processing based on legitimate interests</li>
-            <li><strong>Withdraw consent</strong> — for any processing activity based solely on your consent</li>
-          </ul>
-          <p>
-            To exercise any of these rights, email us at
-            <a href="mailto:dzswiftpayapp@gmail.com">dzswiftpayapp@gmail.com</a>.
-            We will acknowledge your request within 72 hours and provide a substantive
-            response within 30 days.
-          </p>
+          <h2 data-i18n="s8_title">8. Your Rights</h2>
+          <div data-i18n-html="s8_body">
+            <p>Subject to applicable law, you have the right to:</p>
+            <ul>
+              <li><strong>Access</strong> — request a copy of the personal data we hold about you</li>
+              <li><strong>Rectification</strong> — request correction of inaccurate or incomplete information</li>
+              <li><strong>Erasure</strong> — request deletion of data we are not legally required to retain</li>
+              <li><strong>Restriction</strong> — request that we limit how we process your data in certain circumstances</li>
+              <li><strong>Portability</strong> — receive your data in a structured, commonly used format</li>
+              <li><strong>Objection</strong> — object to processing based on legitimate interests</li>
+              <li><strong>Withdraw consent</strong> — for any processing activity based solely on your consent</li>
+            </ul>
+            <p>To exercise any of these rights, email us at <a href="mailto:dzswiftpayapp@gmail.com">dzswiftpayapp@gmail.com</a>. We will acknowledge your request within 72 hours and provide a substantive response within 30 days.</p>
+          </div>
         </div>
 
       </div>
     </div>
 
-    <!-- Contact -->
     <a href="mailto:dzswiftpayapp@gmail.com" class="contact-card">
       <div class="contact-icon">✉️</div>
       <div>
-        <div class="contact-label">Privacy enquiries</div>
+        <div class="contact-label" data-i18n="contact_label">Privacy enquiries</div>
         <div class="contact-email">dzswiftpayapp@gmail.com</div>
-        <div class="contact-note">We respond within 72 hours</div>
+        <div class="contact-note" data-i18n="contact_note">We respond within 72 hours</div>
       </div>
     </a>
 
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
       <a href="index.html" class="footer-logo">
         <div class="footer-logo-mark">DZ</div>
         <span class="footer-brand">DZ SwiftPay</span>
       </a>
-      <span class="footer-copy">&copy; 2026 DZ SwiftPay</span>
+      <span class="footer-copy" data-i18n="footer_copy">&copy; 2026 DZ SwiftPay</span>
       <div class="footer-links">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="support.html">Support</a>
+        <a href="privacy.html" data-i18n="nav_privacy">Privacy</a>
+        <a href="terms.html" data-i18n="nav_terms">Terms</a>
+        <a href="support.html" data-i18n="nav_support">Support</a>
       </div>
     </div>
   </footer>
 
+  <script>
+  window.TRANSLATIONS = {
+    en: {
+      doc_title:    'Privacy Policy — DZ SwiftPay',
+      nav_home:     'Home', nav_privacy: 'Privacy Policy',
+      nav_terms:    'Terms of Service', nav_support: 'Support',
+      page_eyebrow: 'Legal',
+      page_title:   'Privacy Policy',
+      page_meta:    'DZ SwiftPay · Last updated July 2026',
+      page_intro:   'DZ SwiftPay ("we", "us", or "our") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your data when you use our mobile application and financial services.',
+      s1_title: '1. Account Information',
+      s1_body: '<p>When you register for a DZ SwiftPay account we collect your full name, email address, date of birth, phone number, and country of residence. This information is required to create and maintain your account, communicate important notices, and comply with financial services regulations.</p><p>You may update your personal information at any time through the app. We store account data on encrypted servers located within secure data centres and do not sell your information to third parties.</p>',
+      s2_title: '2. Identity Verification (KYC)',
+      s2_body: '<p>To comply with anti-money laundering (AML) and know-your-customer (KYC) obligations under Algerian financial law and applicable international standards, we collect:</p><ul><li>A government-issued photo ID (national identity card, passport, or driving licence — front and back)</li><li>A selfie photograph taken at the time of submission</li></ul><p>These documents are transmitted over encrypted connections, stored in a secure document vault, and reviewed solely by our authorised compliance personnel. They are never sold, rented, or shared with third parties except as required by law or a competent regulatory authority. KYC documents are retained for a minimum of five years after account closure as mandated by financial regulations.</p>',
+      s3_title: '3. Transaction Information',
+      s3_body: '<p>We collect and permanently record all transactions conducted through our platform, including peer-to-peer transfers, mobile top-ups, bill payments, and QR code payments. Recorded data includes transaction amounts, timestamps, sender and recipient identifiers, currency, status, and any reference notes you attach.</p><p>Transaction records are essential for delivering our services, generating your account statements, resolving disputes, and meeting regulatory reporting requirements. These records are retained for a minimum of five years in accordance with applicable financial law.</p>',
+      s4_title: '4. Payment Providers',
+      s4_body: '<p>We partner with regulated payment processors, banking institutions, and mobile network operators to execute your transactions. When you initiate a payment or top-up, the minimum necessary transaction data is shared with the relevant partner for the sole purpose of processing that payment.</p><p>All payment partners operate under binding data processing agreements and are required to maintain security standards equivalent to or exceeding our own. We do not share your data with payment partners for their independent marketing or advertising purposes.</p>',
+      s5_title: '5. Fraud Prevention',
+      s5_body: '<p>To protect you and the integrity of our platform, we analyse account and transaction activity for indicators of fraudulent behaviour, unauthorised access, or financial crime. This analysis may involve:</p><ul><li>Transaction patterns and amounts</li><li>Device identifiers and operating system information</li><li>Account activity timestamps</li><li>Failed login or authentication attempts</li></ul><p>If suspicious activity is detected, we may place a temporary hold on your account, request re-verification, or contact you directly. We may disclose relevant information to law enforcement or financial intelligence authorities when required by law or court order.</p>',
+      s6_title: '6. Security',
+      s6_body: '<p>All data transmitted between your device and our servers is encrypted using TLS 1.2 or higher. Sensitive data stored on our servers is encrypted at rest using AES-256 encryption.</p><p>Your account is protected by password authentication and optionally by a device PIN or biometric lock (Face ID / Touch ID). Biometric templates and PIN codes are stored exclusively on your device using the operating system\'s secure enclave — they are never transmitted to or stored on our servers.</p><p>In the event of a security incident affecting your personal data, we will notify you within the timeframe required by applicable law.</p>',
+      s7_title: '7. Data Retention',
+      s7_body: '<p>We retain your personal data for as long as your account remains active and for up to seven years after permanent account closure, as required by Algerian financial regulations and international AML standards.</p><p>Non-mandatory data (such as optional profile information or marketing preferences) is deleted within 90 days of your request. After the applicable retention period, all personal data is securely and irreversibly deleted or anonymised so that it can no longer be attributed to you.</p>',
+      s8_title: '8. Your Rights',
+      s8_body: '<p>Subject to applicable law, you have the right to:</p><ul><li><strong>Access</strong> — request a copy of the personal data we hold about you</li><li><strong>Rectification</strong> — request correction of inaccurate or incomplete information</li><li><strong>Erasure</strong> — request deletion of data we are not legally required to retain</li><li><strong>Restriction</strong> — request that we limit how we process your data in certain circumstances</li><li><strong>Portability</strong> — receive your data in a structured, commonly used format</li><li><strong>Objection</strong> — object to processing based on legitimate interests</li><li><strong>Withdraw consent</strong> — for any processing activity based solely on your consent</li></ul><p>To exercise any of these rights, email us at <a href="mailto:dzswiftpayapp@gmail.com">dzswiftpayapp@gmail.com</a>. We will acknowledge your request within 72 hours and provide a substantive response within 30 days.</p>',
+      contact_label: 'Privacy enquiries', contact_note: 'We respond within 72 hours',
+      footer_copy: '© 2026 DZ SwiftPay'
+    },
+    fr: {
+      doc_title:    'Politique de confidentialité — DZ SwiftPay',
+      nav_home:     'Accueil', nav_privacy: 'Confidentialité',
+      nav_terms:    'Conditions d\'utilisation', nav_support: 'Assistance',
+      page_eyebrow: 'Mentions légales',
+      page_title:   'Politique de confidentialité',
+      page_meta:    'DZ SwiftPay · Dernière mise à jour juillet 2026',
+      page_intro:   'DZ SwiftPay (« nous ») s\'engage à protéger vos informations personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos données lorsque vous utilisez notre application mobile et nos services financiers.',
+      s1_title: '1. Informations du compte',
+      s1_body: '<p>Lors de votre inscription sur DZ SwiftPay, nous collectons votre nom complet, votre adresse e-mail, votre date de naissance, votre numéro de téléphone et votre pays de résidence. Ces informations sont nécessaires pour créer et gérer votre compte, vous envoyer des avis importants et respecter la réglementation des services financiers.</p><p>Vous pouvez mettre à jour vos informations personnelles à tout moment depuis l\'application. Nous stockons les données du compte sur des serveurs chiffrés dans des centres de données sécurisés et ne vendons jamais vos informations à des tiers.</p>',
+      s2_title: '2. Vérification d\'identité (KYC)',
+      s2_body: '<p>Pour respecter les obligations de lutte contre le blanchiment de capitaux (LBC) et de connaissance du client (KYC) imposées par le droit financier algérien et les normes internationales applicables, nous collectons :</p><ul><li>Un document d\'identité officiel avec photo (carte nationale d\'identité, passeport ou permis de conduire — recto et verso)</li><li>Un selfie pris en temps réel au moment de la soumission</li></ul><p>Ces documents sont transmis via des connexions chiffrées, stockés dans un coffre-fort documentaire sécurisé et consultés uniquement par nos agents de conformité habilités. Ils ne sont jamais vendus, loués ou partagés avec des tiers, sauf obligation légale ou injonction d\'une autorité réglementaire compétente. Les documents KYC sont conservés pendant au moins cinq ans après la clôture du compte, conformément à la réglementation financière.</p>',
+      s3_title: '3. Informations sur les transactions',
+      s3_body: '<p>Nous collectons et enregistrons de manière permanente toutes les transactions effectuées sur notre plateforme, notamment les virements entre particuliers, les recharges mobiles, les paiements de factures et les paiements par QR code. Les données enregistrées comprennent les montants, les horodatages, les identifiants de l\'expéditeur et du destinataire, la devise, l\'état et toute note de référence que vous joignez.</p><p>Les relevés de transactions sont essentiels pour fournir nos services, générer vos relevés de compte, résoudre les litiges et satisfaire aux exigences de déclaration réglementaire. Ces relevés sont conservés pendant au moins cinq ans conformément à la législation financière applicable.</p>',
+      s4_title: '4. Prestataires de paiement',
+      s4_body: '<p>Nous collaborons avec des processeurs de paiement agréés, des établissements bancaires et des opérateurs de réseaux mobiles pour exécuter vos transactions. Lorsque vous initiez un paiement ou une recharge, les données de transaction strictement nécessaires sont partagées avec le partenaire concerné dans le seul but de traiter ce paiement.</p><p>Tous nos partenaires de paiement opèrent dans le cadre d\'accords contraignants de traitement des données et sont tenus de maintenir des normes de sécurité équivalentes ou supérieures aux nôtres. Nous ne partageons pas vos données avec nos partenaires à des fins de marketing ou de publicité indépendante.</p>',
+      s5_title: '5. Prévention de la fraude',
+      s5_body: '<p>Pour vous protéger et préserver l\'intégrité de notre plateforme, nous analysons l\'activité du compte et des transactions afin de détecter des comportements frauduleux, des accès non autorisés ou des infractions financières. Cette analyse peut porter sur :</p><ul><li>Les schémas et montants de transactions</li><li>Les identifiants d\'appareils et les informations sur le système d\'exploitation</li><li>Les horodatages d\'activité du compte</li><li>Les tentatives de connexion ou d\'authentification échouées</li></ul><p>En cas d\'activité suspecte détectée, nous pouvons bloquer temporairement votre compte, demander une re-vérification ou vous contacter directement. Nous pouvons divulguer des informations pertinentes aux autorités répressives ou aux services de renseignement financier lorsque la loi ou une ordonnance de tribunal l\'exige.</p>',
+      s6_title: '6. Sécurité',
+      s6_body: '<p>Toutes les données transmises entre votre appareil et nos serveurs sont chiffrées à l\'aide de TLS 1.2 ou supérieur. Les données sensibles stockées sur nos serveurs sont chiffrées au repos avec le chiffrement AES-256.</p><p>Votre compte est protégé par une authentification par mot de passe et, en option, par un code PIN ou un verrou biométrique (Face ID / Touch ID). Les empreintes biométriques et les codes PIN sont stockés exclusivement sur votre appareil dans l\'enclave sécurisée du système d\'exploitation — ils ne sont jamais transmis à nos serveurs ni stockés sur ceux-ci.</p><p>En cas d\'incident de sécurité affectant vos données personnelles, nous vous en informerons dans les délais prescrits par la législation applicable.</p>',
+      s7_title: '7. Conservation des données',
+      s7_body: '<p>Nous conservons vos données personnelles aussi longtemps que votre compte est actif et jusqu\'à sept ans après la clôture définitive du compte, conformément à la réglementation financière algérienne et aux normes internationales de lutte contre le blanchiment de capitaux.</p><p>Les données non obligatoires (telles que les informations facultatives du profil ou les préférences marketing) sont supprimées dans les 90 jours suivant votre demande. À l\'expiration de la période de conservation applicable, toutes les données personnelles sont supprimées de façon sécurisée et irréversible ou anonymisées afin de ne plus pouvoir vous être attribuées.</p>',
+      s8_title: '8. Vos droits',
+      s8_body: '<p>Sous réserve de la législation applicable, vous disposez du droit :</p><ul><li><strong>D\'accès</strong> — demander une copie des données personnelles que nous détenons vous concernant</li><li><strong>De rectification</strong> — demander la correction d\'informations inexactes ou incomplètes</li><li><strong>D\'effacement</strong> — demander la suppression de données que nous ne sommes pas légalement tenus de conserver</li><li><strong>De limitation</strong> — demander que nous limitions le traitement de vos données dans certaines circonstances</li><li><strong>De portabilité</strong> — recevoir vos données dans un format structuré et couramment utilisé</li><li><strong>D\'opposition</strong> — vous opposer au traitement fondé sur des intérêts légitimes</li><li><strong>De retrait du consentement</strong> — pour toute activité de traitement reposant uniquement sur votre consentement</li></ul><p>Pour exercer l\'un de ces droits, contactez-nous à <a href="mailto:dzswiftpayapp@gmail.com">dzswiftpayapp@gmail.com</a>. Nous accuserons réception de votre demande dans les 72 heures et fournirons une réponse de fond dans les 30 jours.</p>',
+      contact_label: 'Questions relatives à la confidentialité', contact_note: 'Nous répondons dans les 72 heures',
+      footer_copy: '© 2026 DZ SwiftPay'
+    },
+    ar: {
+      doc_title:    'سياسة الخصوصية — DZ SwiftPay',
+      nav_home:     'الرئيسية', nav_privacy: 'سياسة الخصوصية',
+      nav_terms:    'شروط الخدمة', nav_support: 'الدعم',
+      page_eyebrow: 'قانوني',
+      page_title:   'سياسة الخصوصية',
+      page_meta:    'DZ SwiftPay · آخر تحديث يوليو 2026',
+      page_intro:   'تلتزم منصة DZ SwiftPay بحماية معلوماتك الشخصية. توضّح سياسة الخصوصية هذه كيفية جمع بياناتك واستخدامها والإفصاح عنها وحمايتها عند استخدامك لتطبيقنا المحمول وخدماتنا المالية.',
+      s1_title: '١. معلومات الحساب',
+      s1_body: '<p>عند تسجيلك في DZ SwiftPay، نجمع اسمك الكامل وعنوان بريدك الإلكتروني وتاريخ ميلادك ورقم هاتفك وبلد إقامتك. تُعدّ هذه المعلومات ضرورية لإنشاء حسابك والحفاظ عليه، وإرسال الإشعارات المهمة إليك، والامتثال للوائح الخدمات المالية.</p><p>يمكنك تحديث معلوماتك الشخصية في أي وقت من خلال التطبيق. نخزّن بيانات الحساب على خوادم مشفّرة في مراكز بيانات آمنة، ولا نبيع معلوماتك لأطراف ثالثة.</p>',
+      s2_title: '٢. التحقق من الهوية (KYC)',
+      s2_body: '<p>امتثالاً لمتطلبات مكافحة غسيل الأموال (AML) والتحقق من هوية العملاء (KYC) بموجب القانون المالي الجزائري والمعايير الدولية المعمول بها، نجمع:</p><ul><li>وثيقة هوية رسمية تحمل صورة (بطاقة الهوية الوطنية أو جواز السفر أو رخصة القيادة — الوجه الأمامي والخلفي)</li><li>صورة شخصية حية يتم التقاطها وقت التقديم</li></ul><p>تُنقل هذه الوثائق عبر اتصالات مشفّرة وتُخزَّن في خزنة وثائق آمنة، ولا يطّلع عليها إلا موظفو الامتثال المخوَّلون. لا تُباع هذه الوثائق أو تُؤجَّر أو تُشارَك مع أطراف ثالثة إلا وفقاً لما يقتضيه القانون أو تأمر به جهة تنظيمية مختصة. يُحتفظ بوثائق التحقق لمدة لا تقل عن خمس سنوات بعد إغلاق الحساب وفقاً للوائح المالية.</p>',
+      s3_title: '٣. معلومات المعاملات',
+      s3_body: '<p>نجمع ونسجّل بصفة دائمة جميع المعاملات التي تجريها عبر منصتنا، بما فيها التحويلات بين الأفراد وشحن الهاتف المحمول ودفع الفواتير والمدفوعات عبر رمز QR. تشمل البيانات المسجَّلة مبالغ المعاملات والطوابع الزمنية وبيانات المُرسِل والمُستلِم والعملة والحالة وأي ملاحظات مرجعية تُضيفها.</p><p>تُعدّ سجلات المعاملات ضرورية لتقديم خدماتنا وإنشاء كشوف حسابك وحل النزاعات والوفاء بمتطلبات التقارير التنظيمية. يُحتفظ بهذه السجلات لمدة لا تقل عن خمس سنوات وفقاً للقانون المالي المعمول به.</p>',
+      s4_title: '٤. مزودو خدمات الدفع',
+      s4_body: '<p>نتعاون مع معالجي الدفع المرخَّصين والمؤسسات المصرفية ومشغّلي شبكات الهاتف المحمول لتنفيذ معاملاتك. عند إجراء دفعة أو عملية شحن، تُشارَك البيانات الضرورية فقط مع الشريك المعني لغرض معالجة تلك المعاملة حصراً.</p><p>يعمل جميع شركائنا في مجال الدفع بموجب اتفاقيات معالجة بيانات مُلزِمة، ويلتزمون بمعايير أمنية مكافئة لمعاييرنا أو تتجاوزها. لا نشارك بياناتك مع شركاء الدفع لأغراضهم التسويقية أو الإعلانية المستقلة.</p>',
+      s5_title: '٥. منع الاحتيال',
+      s5_body: '<p>لحمايتك وصون نزاهة منصتنا، نحلّل نشاط الحساب والمعاملات بحثاً عن مؤشرات السلوك الاحتيالي أو الوصول غير المصرَّح به أو الجرائم المالية. قد يشمل هذا التحليل:</p><ul><li>أنماط المعاملات ومبالغها</li><li>معرّفات الأجهزة ومعلومات نظام التشغيل</li><li>طوابع وقت نشاط الحساب</li><li>محاولات تسجيل الدخول أو المصادقة الفاشلة</li></ul><p>إذا اكتُشف نشاط مشبوه، قد نضع تعليقاً مؤقتاً على حسابك أو نطلب إعادة التحقق من هويتك أو نتواصل معك مباشرة. قد نُفصح عن المعلومات ذات الصلة لجهات إنفاذ القانون أو سلطات الاستخبارات المالية وفقاً لما يقتضيه القانون أو أمر المحكمة.</p>',
+      s6_title: '٦. الأمان',
+      s6_body: '<p>تُشفَّر جميع البيانات المنقولة بين جهازك وخوادمنا باستخدام TLS 1.2 أو أعلى. كما تُشفَّر البيانات الحساسة المخزَّنة على خوادمنا في حالة السكون باستخدام تشفير AES-256.</p><p>يُحمى حسابك بمصادقة كلمة المرور وبشكل اختياري بقفل رمز PIN للجهاز أو قفل بيومتري (Face ID / Touch ID). تُخزَّن بيانات بصمة الوجه ورموز PIN حصراً على جهازك باستخدام الخزنة الآمنة لنظام التشغيل، ولا تُنقل إلى خوادمنا أو تُخزَّن فيها.</p><p>في حالة وقوع حادثة أمنية تؤثر على بياناتك الشخصية، سنبلّغك في غضون الإطار الزمني الذي يستلزمه القانون المعمول به.</p>',
+      s7_title: '٧. الاحتفاظ بالبيانات',
+      s7_body: '<p>نحتفظ ببياناتك الشخصية طوال فترة نشاط حسابك ولمدة تصل إلى سبع سنوات بعد الإغلاق الدائم للحساب، وفقاً للوائح المالية الجزائرية ومعايير مكافحة غسيل الأموال الدولية.</p><p>تُحذف البيانات غير الإلزامية (كالمعلومات الاختيارية في الملف الشخصي أو تفضيلات التسويق) في غضون 90 يوماً من تقديم طلبك. بعد انتهاء فترة الاحتفاظ المعمول بها، تُحذف جميع البيانات الشخصية أو تُجهَّل بشكل آمن لا رجعة فيه بحيث لا يمكن إسنادها إليك.</p>',
+      s8_title: '٨. حقوقك',
+      s8_body: '<p>وفقاً للقانون المعمول به، يحق لك:</p><ul><li><strong>الوصول</strong> — طلب نسخة من بياناتك الشخصية المحفوظة لدينا</li><li><strong>التصحيح</strong> — طلب تصحيح المعلومات غير الدقيقة أو غير المكتملة</li><li><strong>الحذف</strong> — طلب حذف البيانات التي لا يلزمنا القانون بالاحتفاظ بها</li><li><strong>التقييد</strong> — طلب تقييد كيفية معالجة بياناتك في ظروف معينة</li><li><strong>قابلية النقل</strong> — استلام بياناتك بتنسيق منظّم وشائع الاستخدام</li><li><strong>الاعتراض</strong> — الاعتراض على المعالجة القائمة على المصالح المشروعة</li><li><strong>سحب الموافقة</strong> — لأي نشاط معالجة يستند فقط إلى موافقتك</li></ul><p>لممارسة أي من هذه الحقوق، تواصل معنا عبر <a href="mailto:dzswiftpayapp@gmail.com">dzswiftpayapp@gmail.com</a>. سنؤكد استلام طلبك خلال 72 ساعة ونُقدّم رداً موضوعياً خلال 30 يوماً.</p>',
+      contact_label: 'استفسارات الخصوصية', contact_note: 'نردّ خلال 72 ساعة',
+      footer_copy: '© 2026 DZ SwiftPay'
+    }
+  };
+  </script>
+  <script src="i18n.js"></script>
 </body>
 </html>
