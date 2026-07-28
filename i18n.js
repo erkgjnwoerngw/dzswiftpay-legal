@@ -1,4 +1,4 @@
-/* DZ SwiftPay — Language Engine
+/* Raoufi — Language Engine
    Requires window.TRANSLATIONS to be defined before this script runs. */
 (function () {
   window.setLanguage = function (lang) {
@@ -48,3 +48,4 @@
     init();
   }
 }());
+ 
