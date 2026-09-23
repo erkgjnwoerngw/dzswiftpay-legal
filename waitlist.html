@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Raoufi — Liste d'attente</title>
+<meta name="description" content="Raoufi — portefeuille numérique algérien. Rejoignez la liste d'attente de la bêta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Tajawal:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  --brand:#2F6B3E;
+  --brand-lite:#297B54;
+  --brand-deep:#004925;
+  --paper:#F7FBF7;
+  --ink:#16211A;
+  --mute:#6F8277;
+  --line:#E7F0EA;
+  --red:#D21034;
+  --gold:#FFE45E;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0;min-height:100%;
+  background:var(--paper);color:var(--ink);
+  font-family:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+body[dir="rtl"]{font-family:"Tajawal","Poppins",system-ui,sans-serif}
+
+.wrap{max-width:560px;margin:0 auto;padding:28px 22px 64px}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:38px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand .ic{
+  width:40px;height:40px;border-radius:11px;
+  background:linear-gradient(140deg,var(--brand-lite),var(--brand-deep));
+  display:grid;place-items:center;color:#fff;font-weight:800;font-size:21px;
+}
+.brand .nm{font-weight:800;font-size:19px;letter-spacing:-.03em}
+.brand .nm i{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--red);margin-inline-start:2px;vertical-align:baseline}
+
+.langs{display:flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px}
+.langs button{
+  font:inherit;font-size:12px;font-weight:600;color:var(--mute);
+  background:none;border:0;border-radius:999px;padding:6px 11px;cursor:pointer;
+}
+.langs button[aria-pressed="true"]{background:var(--brand);color:#fff}
+.langs button:focus-visible{outline:2px solid var(--brand-lite);outline-offset:2px}
+
+/* hero */
+h1{
+  font-size:clamp(30px,8vw,40px);line-height:1.12;letter-spacing:-.035em;
+  font-weight:800;margin:0 0 14px;
+}
+.lede{font-size:16px;line-height:1.6;color:#3F4F46;margin:0 0 26px;font-weight:500}
+
+/* counter */
+.counter{
+  background:linear-gradient(150deg,var(--brand-lite),var(--brand-deep));
+  color:#fff;border-radius:22px;padding:24px;margin-bottom:22px;
+}
+.counter .n{
+  font-size:46px;font-weight:800;letter-spacing:-.04em;line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.counter .l{font-size:13.5px;opacity:.85;font-weight:500;margin-top:7px}
+.counter .n.loading{opacity:.45}
+
+/* form */
+form{display:flex;flex-direction:column;gap:11px}
+label{font-size:13px;font-weight:600;color:var(--mute)}
+input{
+  font:inherit;font-size:16px;width:100%;
+  padding:15px 16px;border-radius:14px;
+  border:1px solid var(--line);background:#fff;color:var(--ink);
+}
+input:focus{outline:2px solid var(--brand);outline-offset:-1px;border-color:transparent}
+input::placeholder{color:#A6B5AC}
+button.submit{
+  font:inherit;font-size:16px;font-weight:700;
+  background:var(--brand);color:#fff;border:0;border-radius:14px;
+  padding:16px;cursor:pointer;margin-top:4px;
+}
+button.submit:hover{background:#275A34}
+button.submit:disabled{opacity:.55;cursor:default}
+button.submit:focus-visible{outline:2px solid var(--brand-lite);outline-offset:2px}
+
+.msg{font-size:14px;font-weight:600;margin:0;min-height:20px;line-height:1.5}
+.msg.ok{color:var(--brand)}
+.msg.err{color:var(--red)}
+
+.done{
+  background:#fff;border:1px solid var(--line);border-radius:22px;
+  padding:26px;text-align:center;
+}
+.done .tick{
+  width:54px;height:54px;border-radius:50%;background:var(--brand);
+  display:grid;place-items:center;margin:0 auto 14px;
+}
+.done .tick svg{width:26px;height:26px;stroke:#fff;stroke-width:3.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.done h2{font-size:21px;font-weight:800;margin:0 0 8px;letter-spacing:-.02em}
+.done p{font-size:14.5px;color:#3F4F46;margin:0;line-height:1.6}
+[hidden]{display:none!important}
+
+/* platforms */
+.plats{display:flex;gap:9px;flex-wrap:wrap;margin:26px 0 0}
+.plat{
+  font-size:12.5px;font-weight:600;color:var(--brand);
+  background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;
+}
+.note{font-size:12.5px;color:var(--mute);line-height:1.6;margin:22px 0 0}
+.foot{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px;color:var(--mute)}
+.foot a{color:var(--brand);text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand">
+      <div class="ic">R</div>
+      <div class="nm">Raoufi<i></i></div>
+    </div>
+    <nav class="langs" aria-label="Langue">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="ar" aria-pressed="false">ع</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </nav>
+  </header>
+
+  <h1 data-t="h1"></h1>
+  <p class="lede" data-t="lede"></p>
+
+  <div class="counter" id="counter" hidden>
+    <div class="n loading" id="count">—</div>
+    <div class="l" data-t="counterLabel"></div>
+  </div>
+
+  <form id="form" novalidate>
+    <label for="email" data-t="emailLabel"></label>
+    <input id="email" name="email" type="email" autocomplete="email" required>
+    <label for="phone" data-t="phoneLabel"></label>
+    <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="05 / 06 / 07 …">
+    <button class="submit" type="submit" data-t="cta"></button>
+    <p class="msg" id="msg" role="status" aria-live="polite"></p>
+  </form>
+
+  <div class="done" id="done" hidden>
+    <div class="tick"><svg viewBox="0 0 24 24"><path d="M4 12.8 9.2 18 20 6.6"/></svg></div>
+    <h2 data-t="doneH"></h2>
+    <p data-t="doneP"></p>
+  </div>
+
+  <div class="plats">
+    <span class="plat">iOS · TestFlight</span>
+    <span class="plat">Android · APK</span>
+  </div>
+
+  <p class="note" data-t="note"></p>
+
+  <div class="foot">
+    <a href="./index.html" data-t="legal"></a>
+  </div>
+</div>
+
+<script>
+/* ---------------------------------------------------------------
+   CONFIG — replace with your own project values.
+   The anon key is public by design; row-level security is what
+   protects the table. See supabase-setup.sql.
+   --------------------------------------------------------------- */
+var SUPABASE_URL  = "https://YOUR-PROJECT.supabase.co";
+var SUPABASE_ANON = "YOUR-ANON-KEY";
+var SHOW_COUNT_FROM = 250;   // hide the counter until it clears this
+
+var T = {
+  fr:{
+    dir:"ltr",
+    h1:"Envoyez de l'argent en une seconde.",
+    lede:"Raoufi est un portefeuille algérien pour envoyer et recevoir de l'argent instantanément, entre utilisateurs. La bêta est ouverte par invitation — inscrivez-vous pour recevoir la vôtre.",
+    counterLabel:"personnes déjà sur la liste",
+    emailLabel:"Email",
+    phoneLabel:"Téléphone (facultatif)",
+    cta:"Rejoindre la liste d'attente",
+    doneH:"Vous êtes sur la liste.",
+    doneP:"On vous écrit dès qu'une place se libère. Vérifiez vos spams — l'email vient de raoufi.app.",
+    note:"Raoufi est en version bêta et n'est pas encore un prestataire de services de paiement agréé. Aucun dépôt n'est accepté du grand public pendant cette phase.",
+    legal:"Mentions légales et confidentialité",
+    errEmail:"Entrez une adresse email valide.",
+    errNet:"Échec de l'envoi. Réessayez dans un instant.",
+    errDupe:"Cet email est déjà sur la liste.",
+    sending:"Envoi…"
+  },
+  ar:{
+    dir:"rtl",
+    h1:"صيفط الدراهم في ثانية.",
+    lede:"راوفي محفظة جزائرية باش تصيفط وتستقبل الدراهم دغيا بين المستعملين. النسخة التجريبية بالدعوة — سجّل باش توصلك دعوتك.",
+    counterLabel:"واحد راهم في القائمة",
+    emailLabel:"الإيميل",
+    phoneLabel:"رقم الهاتف (اختياري)",
+    cta:"سجّل في قائمة الانتظار",
+    doneH:"راك في القائمة.",
+    doneP:"نكتبولك كي تتفكّ بلاصة. شوف في السبام — الإيميل يجي من raoufi.app.",
+    note:"راوفي مازال في نسخة تجريبية وماشي مؤسسة دفع معتمدة. ما نقبلو حتى وديعة من الجمهور في هاد المرحلة.",
+    legal:"الشروط القانونية والخصوصية",
+    errEmail:"دخّل إيميل صحيح.",
+    errNet:"ما تصيفطش. عاود من بعد شوية.",
+    errDupe:"هاد الإيميل راه ديجا في القائمة.",
+    sending:"جاري الإرسال…"
+  },
+  en:{
+    dir:"ltr",
+    h1:"Send money in a second.",
+    lede:"Raoufi is an Algerian wallet for sending and receiving money instantly between users. The beta is invite-only — sign up to get yours.",
+    counterLabel:"people already on the list",
+    emailLabel:"Email",
+    phoneLabel:"Phone (optional)",
+    cta:"Join the waitlist",
+    doneH:"You're on the list.",
+    doneP:"We'll email you when a place opens up. Check your spam — the email comes from raoufi.app.",
+    note:"Raoufi is in beta and is not yet a licensed payment service provider. No deposits are accepted from the general public during this phase.",
+    legal:"Legal terms and privacy",
+    errEmail:"Enter a valid email address.",
+    errNet:"Couldn't send that. Try again in a moment.",
+    errDupe:"That email is already on the list.",
+    sending:"Sending…"
+  }
+};
+
+var lang = "fr";
+var form = document.getElementById("form");
+var msgEl = document.getElementById("msg");
+var doneEl = document.getElementById("done");
+var counterEl = document.getElementById("counter");
+var countEl = document.getElementById("count");
+
+function apply(l){
+  lang = l;
+  var t = T[l];
+  document.documentElement.lang = l;
+  document.body.dir = t.dir;
+  document.querySelectorAll("[data-t]").forEach(function(el){
+    el.textContent = t[el.getAttribute("data-t")];
+  });
+  document.querySelectorAll(".langs button").forEach(function(b){
+    b.setAttribute("aria-pressed", String(b.dataset.lang === l));
+  });
+  try{ localStorage.setItem("raoufi-lang", l); }catch(e){}
+}
+
+document.querySelectorAll(".langs button").forEach(function(b){
+  b.addEventListener("click", function(){ apply(b.dataset.lang); });
+});
+
+(function initLang(){
+  var saved = null;
+  try{ saved = localStorage.getItem("raoufi-lang"); }catch(e){}
+  var nav = (navigator.language || "fr").slice(0,2);
+  apply(saved || (T[nav] ? nav : "fr"));
+})();
+
+/* ---- live count via the public RPC ---- */
+function loadCount(){
+  fetch(SUPABASE_URL + "/rest/v1/rpc/waitlist_count", {
+    method:"POST",
+    headers:{ "apikey":SUPABASE_ANON, "Authorization":"Bearer "+SUPABASE_ANON, "Content-Type":"application/json" },
+    body:"{}"
+  })
+  .then(function(r){ return r.ok ? r.json() : Promise.reject(); })
+  .then(function(n){
+    if(typeof n !== "number" || n < SHOW_COUNT_FROM) return;
+    counterEl.hidden = false;
+    countEl.classList.remove("loading");
+    countEl.textContent = n.toLocaleString(lang === "ar" ? "fr" : lang);
+  })
+  .catch(function(){ /* counter simply stays hidden */ });
+}
+loadCount();
+
+/* ---- signup ---- */
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+  var t = T[lang];
+  var email = document.getElementById("email").value.trim();
+  var phone = document.getElementById("phone").value.trim();
+  var btn = form.querySelector("button.submit");
+
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(email)){
+    msgEl.className = "msg err"; msgEl.textContent = t.errEmail; return;
+  }
+
+  btn.disabled = true;
+  msgEl.className = "msg"; msgEl.textContent = t.sending;
+
+  fetch(SUPABASE_URL + "/rest/v1/waitlist", {
+    method:"POST",
+    headers:{
+      "apikey":SUPABASE_ANON,
+      "Authorization":"Bearer "+SUPABASE_ANON,
+      "Content-Type":"application/json",
+      "Prefer":"return=minimal"
+    },
+    body:JSON.stringify({
+      email:email.toLowerCase(),
+      phone:phone || null,
+      locale:lang,
+      source:new URLSearchParams(location.search).get("src") || "site"
+    })
+  })
+  .then(function(r){
+    if(r.ok){
+      form.hidden = true; doneEl.hidden = false; loadCount(); return;
+    }
+    if(r.status === 409){
+      msgEl.className = "msg err"; msgEl.textContent = t.errDupe; btn.disabled = false; return;
+    }
+    throw new Error(r.status);
+  })
+  .catch(function(){
+    msgEl.className = "msg err"; msgEl.textContent = t.errNet; btn.disabled = false;
+  });
+});
+</script>
+</body>
+</html>
