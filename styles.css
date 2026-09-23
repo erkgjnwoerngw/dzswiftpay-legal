@@ -32,12 +32,32 @@ body{
   line-height:1.7;
   -webkit-font-smoothing:antialiased;
   min-height:100vh;
-  /* faint green wash at the top, matching the homepage */
-  background-image:
-    radial-gradient(110% 40% at 50% -6%, rgba(47,107,62,.4) 0%, rgba(11,58,34,.18) 40%, rgba(4,18,11,0) 76%);
-  background-repeat:no-repeat;
-  background-size:100% 620px;
+  position:relative;
 }
+
+/* Identical background treatment to the homepage: dark green ombre
+   fading to black, with a faint grid over the top band. */
+body::before,body::after{
+  content:"";position:absolute;inset:0 0 auto 0;height:1100px;
+  z-index:0;pointer-events:none;
+}
+body::before{
+  background:
+    radial-gradient(120% 62% at 50% -8%, rgba(47,107,62,.62) 0%, rgba(11,58,34,.36) 38%, rgba(4,18,11,0) 74%),
+    linear-gradient(180deg,#0A2C1B 0%,#061B10 32%,var(--black) 62%);
+}
+body::after{
+  opacity:.5;
+  background-image:
+    linear-gradient(rgba(110,231,160,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(110,231,160,.055) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(80% 46% at 50% 8%,#000 0%,transparent 76%);
+  -webkit-mask-image:radial-gradient(80% 46% at 50% 8%,#000 0%,transparent 76%);
+}
+/* keep content above the background layers */
+.nav,.page,.hero,.footer{position:relative}
+.page,.hero,.footer{z-index:1}
 body:lang(ar),[dir="rtl"] body{font-family:"Tajawal","Poppins",system-ui,sans-serif}
 
 a{color:var(--mint);text-decoration:none}
@@ -61,7 +81,7 @@ code{
 /* ---------------- nav ---------------- */
 .nav{
   position:sticky;top:0;z-index:50;
-  background:rgba(4,18,11,.82);
+  background:rgba(4,18,11,.7);
   backdrop-filter:saturate(160%) blur(14px);
   -webkit-backdrop-filter:saturate(160%) blur(14px);
   border-bottom:1px solid var(--hairline);

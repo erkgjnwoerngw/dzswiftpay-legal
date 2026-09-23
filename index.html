@@ -54,9 +54,21 @@ body[dir="rtl"]{font-family:"Tajawal","Poppins",system-ui,sans-serif}
 
 /* ---------- header ---------- */
 header{
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-  padding:22px clamp(18px,5vw,48px);
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  padding:14px clamp(16px,4vw,32px);
+  background:rgba(4,18,11,.82);
+  backdrop-filter:saturate(160%) blur(14px);
+  -webkit-backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid rgba(234,243,237,.08);
 }
+.tabs{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;margin-inline:auto}
+.tabs a{
+  color:var(--dim);font-size:13.5px;font-weight:500;
+  padding:8px 13px;border-radius:999px;text-decoration:none;white-space:nowrap;
+}
+.tabs a:hover{color:var(--fg);background:rgba(255,255,255,.06)}
+.tabs a[aria-current="page"]{color:var(--mint);background:rgba(110,231,160,.09)}
 .brand{display:flex;align-items:center;gap:13px;min-width:0}
 .brand .ic{
   width:48px;height:48px;border-radius:13px;flex:none;
@@ -89,7 +101,7 @@ body[dir="rtl"] .badge{letter-spacing:0;text-transform:none}
 /* ---------- hero ---------- */
 .hero{
   max-width:940px;margin:0 auto;
-  padding:clamp(28px,7vw,70px) clamp(18px,5vw,32px) clamp(60px,10vw,110px);
+  padding:clamp(40px,8vw,84px) clamp(18px,5vw,32px) clamp(60px,10vw,110px);
   text-align:center;
 }
 .pill{
@@ -244,9 +256,13 @@ footer{
   html{scroll-behavior:auto}
   .pill .dot{animation:none}
 }
-@media (max-width:540px){
-  header{flex-direction:column;align-items:flex-start;gap:14px}
-  .hgroup{width:100%;justify-content:space-between}
+@media (max-width:860px){
+  .tabs{order:3;flex:1 0 100%;margin:2px 0 0}
+  .hgroup{margin-inline-start:auto}
+}
+@media (max-width:420px){
+  .badge{display:none}
+  .tabs a{padding:7px 10px;font-size:12.8px}
 }
 </style>
 </head>
@@ -262,6 +278,12 @@ footer{
         <div class="sub" data-t="tagline"></div>
       </div>
     </div>
+    <nav class="tabs" aria-label="Pages">
+      <a href="./index.html" aria-current="page" data-t="navHome"></a>
+      <a href="./privacy.html" data-t="navPrivacy"></a>
+      <a href="./terms.html" data-t="navTerms"></a>
+      <a href="./support.html" data-t="navSupport"></a>
+    </nav>
     <div class="hgroup">
       <span class="badge" data-t="badge"></span>
       <nav class="langs" aria-label="Langue">
@@ -388,7 +410,7 @@ var T = {
     f4t:"Budgets et objectifs", f4d:"Suivez vos dépenses et mettez de l'argent de côté.",
     f5t:"Paiement par QR", f5d:"Générez ou scannez un QR code pour payer et être payé.",
     f6t:"Sécurité", f6d:"Chiffrement TLS, Face ID, code PIN et vérification d'identité.",
-    navPrivacy:"Confidentialité", navTerms:"Conditions d'utilisation", navSupport:"Support",
+    navHome:"Accueil", navPrivacy:"Confidentialité", navTerms:"Conditions d'utilisation", navSupport:"Support",
     note:"Raoufi est en version bêta et n'est pas encore un prestataire de services de paiement agréé par la Banque d'Algérie. Les fonctionnalités décrites sont en cours de test et aucun dépôt n'est accepté du grand public pendant cette phase.",
     copy:"© 2026 RAOUFI LTD",
     errEmail:"Entrez une adresse email valide.",
@@ -418,7 +440,7 @@ var T = {
     f4t:"الميزانية والأهداف", f4d:"تابع مصاريفك وحوّس تحفظ الدراهم.",
     f5t:"الدفع بكود QR", f5d:"أنشئ ولا اقرا كود QR باش تخلّص وتتخلّص.",
     f6t:"الأمان", f6d:"تشفير TLS، Face ID، كود PIN والتحقق من الهوية.",
-    navPrivacy:"الخصوصية", navTerms:"شروط الاستخدام", navSupport:"الدعم",
+    navHome:"الرئيسية", navPrivacy:"الخصوصية", navTerms:"شروط الاستخدام", navSupport:"الدعم",
     note:"راوفي مازال في نسخة تجريبية وماشي مؤسسة دفع معتمدة من بنك الجزائر. الخدمات المذكورة راهي في التجريب وما نقبلو حتى وديعة من الجمهور في هاد المرحلة.",
     copy:"© 2026 RAOUFI LTD",
     errEmail:"دخّل إيميل صحيح.",
@@ -448,7 +470,7 @@ var T = {
     f4t:"Budgets and goals", f4d:"Track your spending and set money aside.",
     f5t:"QR payments", f5d:"Generate or scan a QR code to pay and get paid.",
     f6t:"Security", f6d:"TLS encryption, Face ID, PIN protection and identity verification.",
-    navPrivacy:"Privacy", navTerms:"Terms of service", navSupport:"Support",
+    navHome:"Home", navPrivacy:"Privacy", navTerms:"Terms of service", navSupport:"Support",
     note:"Raoufi is in beta and is not yet a payment service provider licensed by the Bank of Algeria. The features described are in testing and no deposits are accepted from the general public during this phase.",
     copy:"© 2026 RAOUFI LTD",
     errEmail:"Enter a valid email address.",
