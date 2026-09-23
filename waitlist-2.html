@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Raoufi — Bientôt disponible</title>
+<meta name="description" content="Raoufi — le portefeuille algérien pour envoyer de l'argent en une seconde. Rejoignez la liste d'attente de la bêta.">
+<meta name="theme-color" content="#04120B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  --black:#04120B;
+  --green:#2F6B3E;
+  --mint:#6EE7A0;
+  --mint-2:#34D399;
+  --red:#D21034;
+  --fg:#EAF3ED;
+  --dim:#9DB3A6;
+  --faint:rgba(234,243,237,.12);
+  --card:rgba(255,255,255,.035);
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;min-height:100vh;
+  background:var(--black);color:var(--fg);
+  font-family:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;position:relative;
+}
+body[dir="rtl"]{font-family:"Tajawal","Poppins",system-ui,sans-serif}
+
+/* dark green ombré fading to black */
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(120% 70% at 50% -10%, rgba(47,107,62,.6) 0%, rgba(11,58,34,.36) 38%, rgba(4,18,11,0) 72%),
+    linear-gradient(180deg,#0A2C1B 0%,#061B10 34%,var(--black) 68%);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:
+    linear-gradient(rgba(110,231,160,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(110,231,160,.055) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(85% 55% at 50% 12%,#000 0%,transparent 78%);
+  -webkit-mask-image:radial-gradient(85% 55% at 50% 12%,#000 0%,transparent 78%);
+}
+.page{position:relative;z-index:1}
+
+header{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:22px clamp(18px,5vw,48px);
+}
+.brand{display:flex;align-items:center;gap:13px;min-width:0}
+.brand .ic{
+  width:48px;height:48px;border-radius:13px;flex:none;
+  background:url(data:image/webp;base64,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) center/cover;
+  box-shadow:0 6px 18px rgba(0,0,0,.45);
+}
+.brand .nm{font-weight:700;font-size:16px;letter-spacing:.01em;line-height:1.2}
+.brand .nm i{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--red);margin-inline-start:3px}
+.brand .sub{
+  font-size:10.5px;letter-spacing:.16em;color:var(--dim);
+  text-transform:uppercase;font-weight:500;margin-top:3px;
+}
+body[dir="rtl"] .brand .sub{letter-spacing:0;text-transform:none;font-size:12px}
+
+.hgroup{display:flex;align-items:center;gap:10px}
+.badge{
+  font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--mint);border:1px solid rgba(110,231,160,.3);
+  background:rgba(110,231,160,.06);border-radius:999px;padding:9px 16px;white-space:nowrap;
+}
+body[dir="rtl"] .badge{letter-spacing:0;text-transform:none}
+.langs{display:flex;gap:2px;border:1px solid var(--faint);border-radius:999px;padding:3px}
+.langs button{
+  font:inherit;font-size:11.5px;font-weight:600;color:var(--dim);
+  background:none;border:0;border-radius:999px;padding:6px 10px;cursor:pointer;
+}
+.langs button[aria-pressed="true"]{background:rgba(255,255,255,.1);color:var(--fg)}
+.langs button:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
+
+main{
+  max-width:940px;margin:0 auto;
+  padding:clamp(28px,7vw,70px) clamp(18px,5vw,32px) 80px;
+  text-align:center;
+}
+.pill{
+  display:inline-flex;align-items:center;gap:9px;
+  border:1px solid var(--faint);background:rgba(255,255,255,.04);
+  border-radius:999px;padding:9px 20px;
+  font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--fg);margin-bottom:clamp(26px,6vw,44px);
+}
+body[dir="rtl"] .pill{letter-spacing:0;text-transform:none;font-size:13.5px}
+.pill .dot{
+  width:7px;height:7px;border-radius:50%;background:var(--mint);flex:none;
+  animation:ping 2.4s ease-out infinite;
+}
+@keyframes ping{
+  0%{box-shadow:0 0 0 0 rgba(110,231,160,.5)}
+  70%,100%{box-shadow:0 0 0 9px rgba(110,231,160,0)}
+}
+
+h1{
+  font-size:clamp(38px,8.4vw,86px);
+  line-height:1.02;letter-spacing:-.045em;font-weight:800;
+  margin:0 0 clamp(20px,4vw,30px);
+}
+body[dir="rtl"] h1{letter-spacing:0;line-height:1.26}
+h1 .grad{
+  background:linear-gradient(95deg,var(--mint) 0%,var(--mint-2) 42%,#3FA9E0 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  display:inline-block;padding-bottom:.07em;
+}
+.lede{
+  font-size:clamp(14.5px,2.1vw,17px);line-height:1.75;color:var(--dim);
+  max-width:620px;margin:0 auto clamp(34px,7vw,54px);font-weight:400;
+}
+
+.count{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:clamp(8px,1.6vw,14px);max-width:620px;margin:0 auto;
+}
+.cell{
+  background:var(--card);border:1px solid var(--faint);
+  border-radius:16px;padding:clamp(16px,3.2vw,26px) 6px;
+}
+.cell .v{
+  font-size:clamp(26px,6.4vw,46px);font-weight:700;letter-spacing:-.03em;
+  line-height:1;font-variant-numeric:tabular-nums;
+}
+.cell .k{
+  font-size:clamp(8.5px,1.5vw,10.5px);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--dim);margin-top:9px;font-weight:500;
+}
+body[dir="rtl"] .cell .k{letter-spacing:0;text-transform:none;font-size:clamp(10.5px,1.8vw,12.5px)}
+
+form{margin:clamp(34px,7vw,54px) auto 0;max-width:520px}
+.field{
+  display:flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.05);border:1px solid var(--faint);
+  border-radius:16px;padding:7px 7px 7px 20px;
+}
+body[dir="rtl"] .field{padding:7px 20px 7px 7px}
+.field:focus-within{border-color:rgba(110,231,160,.45)}
+.field input{
+  flex:1;min-width:0;font:inherit;font-size:15px;
+  background:none;border:0;color:var(--fg);padding:13px 0;
+}
+.field input:focus{outline:none}
+.field input::placeholder{color:#7C9186}
+.field button{
+  font:inherit;font-size:14.5px;font-weight:700;flex:none;
+  color:#04120B;border:0;border-radius:12px;padding:14px 22px;cursor:pointer;
+  background:linear-gradient(95deg,var(--mint) 0%,var(--mint-2) 100%);
+}
+.field button:hover{filter:brightness(1.07)}
+.field button:disabled{opacity:.5;cursor:default}
+.field button:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
+
+.phone-row{margin-top:10px}
+.phone-row input{
+  width:100%;font:inherit;font-size:15px;
+  background:rgba(255,255,255,.035);border:1px solid var(--faint);
+  border-radius:16px;padding:16px 20px;color:var(--fg);
+}
+.phone-row input:focus{outline:none;border-color:rgba(110,231,160,.45)}
+.phone-row input::placeholder{color:#7C9186}
+
+.reassure{font-size:13px;color:var(--dim);margin:16px 0 0;font-weight:400}
+.msg{font-size:13.5px;font-weight:600;margin:12px 0 0;min-height:19px}
+.msg.err{color:#FF8A9B}
+
+.done{
+  max-width:520px;margin:clamp(34px,7vw,54px) auto 0;
+  background:var(--card);border:1px solid rgba(110,231,160,.22);
+  border-radius:20px;padding:34px 26px;
+}
+.done .tick{
+  width:54px;height:54px;border-radius:50%;margin:0 auto 16px;
+  background:linear-gradient(140deg,var(--mint),var(--mint-2));
+  display:grid;place-items:center;
+}
+.done .tick svg{width:26px;height:26px;stroke:#04120B;stroke-width:3.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.done h2{font-size:21px;font-weight:700;margin:0 0 9px;letter-spacing:-.02em}
+.done p{font-size:14px;color:var(--dim);margin:0;line-height:1.7}
+[hidden]{display:none!important}
+
+.signups{margin:clamp(30px,6vw,46px) 0 0;font-size:13.5px;color:var(--dim);font-weight:500}
+.signups b{color:var(--mint);font-weight:700;font-variant-numeric:tabular-nums}
+.plats{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin:26px 0 0}
+.plat{
+  font-size:12px;font-weight:600;color:var(--dim);
+  border:1px solid var(--faint);border-radius:999px;padding:8px 15px;
+}
+footer{max-width:940px;margin:0 auto;padding:0 clamp(18px,5vw,32px) 54px;text-align:center}
+.note{font-size:11.5px;color:#6E8377;line-height:1.75;max-width:560px;margin:0 auto 18px}
+footer a{color:var(--dim);font-size:12.5px;text-decoration:none;font-weight:500}
+footer a:hover{color:var(--mint)}
+
+@media (prefers-reduced-motion:reduce){.pill .dot{animation:none}}
+@media (max-width:540px){
+  header{flex-direction:column;align-items:flex-start;gap:14px}
+  .hgroup{width:100%;justify-content:space-between}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="brand">
+      <div class="ic"></div>
+      <div>
+        <div class="nm">RAOUFI<i></i></div>
+        <div class="sub" data-t="tagline"></div>
+      </div>
+    </div>
+    <div class="hgroup">
+      <span class="badge" data-t="badge"></span>
+      <nav class="langs" aria-label="Langue">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="ar" aria-pressed="false">ع</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="pill"><span class="dot"></span><span data-t="pill"></span></div>
+
+    <h1><span data-t="h1a"></span> <span class="grad" data-t="h1b"></span> <span data-t="h1c"></span></h1>
+
+    <p class="lede" data-t="lede"></p>
+
+    <div class="count" id="count" role="timer">
+      <div class="cell"><div class="v" id="d">00</div><div class="k" data-t="days"></div></div>
+      <div class="cell"><div class="v" id="h">00</div><div class="k" data-t="hours"></div></div>
+      <div class="cell"><div class="v" id="m">00</div><div class="k" data-t="mins"></div></div>
+      <div class="cell"><div class="v" id="s">00</div><div class="k" data-t="secs"></div></div>
+    </div>
+
+    <form id="form" novalidate>
+      <div class="field">
+        <input id="email" type="email" autocomplete="email" required data-ph="emailPh" aria-label="Email">
+        <button class="submit" type="submit" data-t="cta"></button>
+      </div>
+      <div class="phone-row">
+        <input id="phone" type="tel" autocomplete="tel" data-ph="phonePh" aria-label="Phone">
+      </div>
+      <p class="reassure" data-t="reassure"></p>
+      <p class="msg" id="msg" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="done" id="done" hidden>
+      <div class="tick"><svg viewBox="0 0 24 24"><path d="M4 12.8 9.2 18 20 6.6"/></svg></div>
+      <h2 data-t="doneH"></h2>
+      <p data-t="doneP"></p>
+    </div>
+
+    <p class="signups" id="signups" hidden><b id="signupCount">0</b> <span data-t="counterLabel"></span></p>
+
+    <div class="plats">
+      <span class="plat">iOS · TestFlight</span>
+      <span class="plat">Android · APK</span>
+    </div>
+  </main>
+
+  <footer>
+    <p class="note" data-t="note"></p>
+    <a href="./index.html" data-t="legal"></a>
+  </footer>
+</div>
+
+<script>
+/* ================================================================
+   CONFIG — edit these three lines, nothing else.
+   ================================================================ */
+var LAUNCH_DATE   = "2026-12-01T09:00:00+01:00";   // countdown target, Algiers time
+var SUPABASE_URL  = "https://YOUR-PROJECT.supabase.co";
+var SUPABASE_ANON = "YOUR-ANON-KEY";
+var SHOW_COUNT_FROM = 250;   // signup counter stays hidden below this
+
+var T = {
+  fr:{
+    dir:"ltr",
+    tagline:"Portefeuille numérique · Algérie",
+    badge:"Bêta — 2026",
+    pill:"Bientôt disponible",
+    h1a:"Envoyez de l'argent", h1b:"en une seconde", h1c:"en Algérie",
+    lede:"Raoufi est un portefeuille algérien pour envoyer et recevoir de l'argent instantanément entre utilisateurs, par tag ou par QR code. La bêta est ouverte par invitation.",
+    days:"Jours", hours:"Heures", mins:"Minutes", secs:"Secondes",
+    emailPh:"Entrez votre email", phonePh:"Téléphone (facultatif)",
+    cta:"Être notifié",
+    reassure:"Soyez parmi les premiers informés. Aucun spam, promis.",
+    counterLabel:"personnes déjà sur la liste",
+    doneH:"Vous êtes sur la liste.",
+    doneP:"On vous écrit dès qu'une place se libère. Vérifiez vos spams — l'email vient de raoufi.app.",
+    note:"Raoufi est en version bêta et n'est pas encore un prestataire de services de paiement agréé par la Banque d'Algérie. Aucun dépôt n'est accepté du grand public pendant cette phase.",
+    legal:"Mentions légales et confidentialité",
+    errEmail:"Entrez une adresse email valide.",
+    errNet:"Échec de l'envoi. Réessayez dans un instant.",
+    errDupe:"Cet email est déjà sur la liste.",
+    sending:"Envoi…"
+  },
+  ar:{
+    dir:"rtl",
+    tagline:"محفظة رقمية · الجزائر",
+    badge:"نسخة تجريبية — 2026",
+    pill:"قريباً",
+    h1a:"صيفط الدراهم", h1b:"في ثانية", h1c:"في الجزائر",
+    lede:"راوفي محفظة جزائرية باش تصيفط وتستقبل الدراهم دغيا بين المستعملين، بالتاڤ ولا بكود QR. النسخة التجريبية بالدعوة.",
+    days:"يوم", hours:"ساعة", mins:"دقيقة", secs:"ثانية",
+    emailPh:"دخّل الإيميل تاعك", phonePh:"رقم الهاتف (اختياري)",
+    cta:"علّمني",
+    reassure:"كون من الأوائل لي يعلمو. بلا سبام، نوعدك.",
+    counterLabel:"واحد راهم في القائمة",
+    doneH:"راك في القائمة.",
+    doneP:"نكتبولك كي تتفكّ بلاصة. شوف في السبام — الإيميل يجي من raoufi.app.",
+    note:"راوفي مازال في نسخة تجريبية وماشي مؤسسة دفع معتمدة من بنك الجزائر. ما نقبلو حتى وديعة من الجمهور في هاد المرحلة.",
+    legal:"الشروط القانونية والخصوصية",
+    errEmail:"دخّل إيميل صحيح.",
+    errNet:"ما تصيفطش. عاود من بعد شوية.",
+    errDupe:"هاد الإيميل راه ديجا في القائمة.",
+    sending:"جاري الإرسال…"
+  },
+  en:{
+    dir:"ltr",
+    tagline:"Digital wallet · Algeria",
+    badge:"Beta — 2026",
+    pill:"Coming soon",
+    h1a:"Send money", h1b:"in one second", h1c:"in Algeria",
+    lede:"Raoufi is an Algerian wallet for sending and receiving money instantly between users, by tag or QR code. The beta is invite-only.",
+    days:"Days", hours:"Hours", mins:"Minutes", secs:"Seconds",
+    emailPh:"Enter your email", phonePh:"Phone (optional)",
+    cta:"Notify me",
+    reassure:"Be among the first to know. No spam, promise.",
+    counterLabel:"people already on the list",
+    doneH:"You're on the list.",
+    doneP:"We'll email you when a place opens up. Check your spam — the email comes from raoufi.app.",
+    note:"Raoufi is in beta and is not yet a payment service provider licensed by the Bank of Algeria. No deposits are accepted from the general public during this phase.",
+    legal:"Legal terms and privacy",
+    errEmail:"Enter a valid email address.",
+    errNet:"Couldn't send that. Try again in a moment.",
+    errDupe:"That email is already on the list.",
+    sending:"Sending…"
+  }
+};
+
+var lang="fr";
+var form=document.getElementById("form"),
+    msgEl=document.getElementById("msg"),
+    doneEl=document.getElementById("done");
+
+function apply(l){
+  lang=l;var t=T[l];
+  document.documentElement.lang=l;
+  document.body.dir=t.dir;
+  document.querySelectorAll("[data-t]").forEach(function(el){
+    el.textContent=t[el.getAttribute("data-t")];
+  });
+  document.querySelectorAll("[data-ph]").forEach(function(el){
+    el.placeholder=t[el.getAttribute("data-ph")];
+  });
+  document.querySelectorAll(".langs button").forEach(function(b){
+    b.setAttribute("aria-pressed",String(b.dataset.lang===l));
+  });
+  try{localStorage.setItem("raoufi-lang",l);}catch(e){}
+}
+document.querySelectorAll(".langs button").forEach(function(b){
+  b.addEventListener("click",function(){apply(b.dataset.lang);});
+});
+(function(){
+  var saved=null;try{saved=localStorage.getItem("raoufi-lang");}catch(e){}
+  var nav=(navigator.language||"fr").slice(0,2);
+  apply(saved||(T[nav]?nav:"fr"));
+})();
+
+/* countdown */
+(function(){
+  var target=new Date(LAUNCH_DATE).getTime();
+  var els={d:document.getElementById("d"),h:document.getElementById("h"),
+           m:document.getElementById("m"),s:document.getElementById("s")};
+  function pad(n){return n<10?"0"+n:""+n;}
+  function tick(){
+    if(isNaN(target)){document.getElementById("count").hidden=true;return;}
+    var diff=target-Date.now();if(diff<0)diff=0;
+    var sec=Math.floor(diff/1000);
+    els.d.textContent=pad(Math.floor(sec/86400));
+    els.h.textContent=pad(Math.floor(sec%86400/3600));
+    els.m.textContent=pad(Math.floor(sec%3600/60));
+    els.s.textContent=pad(sec%60);
+  }
+  tick();setInterval(tick,1000);
+})();
+
+/* signup count */
+function loadCount(){
+  fetch(SUPABASE_URL+"/rest/v1/rpc/waitlist_count",{
+    method:"POST",
+    headers:{"apikey":SUPABASE_ANON,"Authorization":"Bearer "+SUPABASE_ANON,"Content-Type":"application/json"},
+    body:"{}"
+  }).then(function(r){return r.ok?r.json():Promise.reject();})
+    .then(function(n){
+      if(typeof n!=="number"||n<SHOW_COUNT_FROM)return;
+      document.getElementById("signups").hidden=false;
+      document.getElementById("signupCount").textContent=n.toLocaleString(lang==="ar"?"fr":lang);
+    }).catch(function(){});
+}
+loadCount();
+
+/* signup */
+form.addEventListener("submit",function(e){
+  e.preventDefault();
+  var t=T[lang];
+  var email=document.getElementById("email").value.trim();
+  var phone=document.getElementById("phone").value.trim();
+  var btn=form.querySelector("button.submit");
+
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(email)){
+    msgEl.className="msg err";msgEl.textContent=t.errEmail;return;
+  }
+  btn.disabled=true;msgEl.className="msg";msgEl.textContent=t.sending;
+
+  fetch(SUPABASE_URL+"/rest/v1/waitlist",{
+    method:"POST",
+    headers:{"apikey":SUPABASE_ANON,"Authorization":"Bearer "+SUPABASE_ANON,
+             "Content-Type":"application/json","Prefer":"return=minimal"},
+    body:JSON.stringify({
+      email:email.toLowerCase(),phone:phone||null,locale:lang,
+      source:new URLSearchParams(location.search).get("src")||"site"
+    })
+  }).then(function(r){
+    if(r.ok){form.hidden=true;doneEl.hidden=false;loadCount();return;}
+    if(r.status===409){msgEl.className="msg err";msgEl.textContent=t.errDupe;btn.disabled=false;return;}
+    throw new Error(r.status);
+  }).catch(function(){
+    msgEl.className="msg err";msgEl.textContent=t.errNet;btn.disabled=false;
+  });
+});
+</script>
+</body>
+</html>
