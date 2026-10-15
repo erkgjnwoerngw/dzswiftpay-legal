@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Raoufi — Bientôt disponible</title>
-<meta name="description" content="Raoufi — le portefeuille algérien pour envoyer de l'argent en une seconde. Rejoignez la liste d'attente de la bêta.">
+<title>Raoufi — Réservez votre @nom</title>
+<meta name="description" content="Raoufi — le portefeuille algérien pour envoyer de l'argent en une seconde. Réservez votre @nom avant le lancement.">
 <meta name="theme-color" content="#04120B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -223,6 +223,90 @@ body[dir="rtl"] .field{padding:7px 20px 7px 7px}
 .done h2{font-size:21px;font-weight:700;margin:0 0 9px;letter-spacing:-.02em}
 .done p{font-size:14px;color:var(--dim);margin:0;line-height:1.7}
 [hidden]{display:none!important}
+/* ---------- @tag reservation ---------- */
+.reserve{
+  max-width:540px;margin:clamp(34px,7vw,52px) auto 0;text-align:start;
+  background:linear-gradient(180deg,rgba(110,231,160,.07),rgba(255,255,255,.025));
+  border:1px solid rgba(110,231,160,.28);border-radius:22px;
+  padding:clamp(22px,4.5vw,32px);
+  box-shadow:0 24px 60px rgba(0,0,0,.35);
+}
+.r-badge{
+  display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:#04120B;background:linear-gradient(95deg,var(--mint),var(--mint-2));
+  border-radius:999px;padding:5px 11px;margin-bottom:14px;
+}
+body[dir="rtl"] .r-badge{letter-spacing:0;text-transform:none;font-size:12.5px}
+.r-head{font-size:clamp(23px,4.4vw,30px);font-weight:800;letter-spacing:-.03em;margin:0 0 8px;line-height:1.15}
+body[dir="rtl"] .r-head{letter-spacing:0}
+.r-sub{font-size:14px;color:var(--dim);margin:0 0 20px;line-height:1.65}
+.reserve form{margin:0;max-width:none}
+.tagfield{
+  display:flex;align-items:center;gap:2px;cursor:text;
+  background:rgba(4,18,11,.6);border:1.5px solid rgba(110,231,160,.35);
+  border-radius:16px;padding:0 16px;transition:border-color .15s;
+}
+.tagfield:focus-within{border-color:var(--mint)}
+.tagfield.ok{border-color:var(--mint)}
+.tagfield.bad{border-color:#FF8A9B}
+.tagfield .at{font-size:24px;font-weight:700;color:var(--mint);line-height:1}
+.tagfield input{
+  flex:1;min-width:0;font:inherit;font-size:22px;font-weight:700;letter-spacing:-.01em;
+  background:none;border:0;color:var(--fg);padding:15px 0;
+}
+.tagfield input:focus{outline:none}
+.tagfield input::placeholder{color:#557064;font-weight:600}
+.tagstate{width:22px;height:22px;flex:none;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800}
+.tagstate.ok{background:var(--mint);color:#04120B}
+.tagstate.bad{background:#FF8A9B;color:#04120B}
+.tagstate.busy{border:2px solid rgba(110,231,160,.3);border-top-color:var(--mint);animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.taghint{font-size:12.5px;color:var(--dim);margin:8px 2px 16px;min-height:18px;line-height:1.5}
+.taghint.ok{color:var(--mint)}
+.taghint.bad{color:#FF8A9B}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.phone2{display:grid;grid-template-columns:118px 1fr;gap:10px;margin-top:10px}
+.inp{
+  width:100%;font:inherit;font-size:15px;color:var(--fg);
+  background:rgba(255,255,255,.045);border:1px solid var(--faint);
+  border-radius:14px;padding:14px 16px;
+}
+.inp:focus{outline:none;border-color:rgba(110,231,160,.5)}
+.inp::placeholder{color:#7C9186}
+.inp.bad{border-color:#FF8A9B}
+select.inp{
+  appearance:none;-webkit-appearance:none;cursor:pointer;padding-inline-end:30px;
+  background-image:linear-gradient(45deg,transparent 50%,var(--dim) 50%),linear-gradient(135deg,var(--dim) 50%,transparent 50%);
+  background-position:calc(100% - 17px) 52%,calc(100% - 12px) 52%;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat;
+}
+select.inp option{background:#0B1E14;color:var(--fg)}
+.reserve .submit{
+  width:100%;margin-top:16px;font:inherit;font-size:16px;font-weight:700;
+  color:#04120B;border:0;border-radius:14px;padding:16px 22px;cursor:pointer;
+  background:linear-gradient(95deg,var(--mint) 0%,var(--mint-2) 100%);
+}
+.reserve .submit:hover{filter:brightness(1.07)}
+.reserve .submit:disabled{opacity:.55;cursor:default}
+.reserve .submit:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
+.reserve .reassure{text-align:center;font-size:12.5px;margin-top:12px}
+.reserve .msg{text-align:center}
+.reserve .done{margin:0;background:none;border:0;padding:6px 0 0;text-align:center}
+.done .fnum{font-size:15px;color:var(--fg);margin:0 0 10px}
+.done .fnum b{color:var(--mint);font-size:20px;font-variant-numeric:tabular-nums}
+.share{
+  display:inline-flex;align-items:center;gap:8px;margin-top:18px;text-decoration:none;
+  font-size:14px;font-weight:700;color:var(--fg);
+  border:1px solid rgba(110,231,160,.4);border-radius:12px;padding:11px 18px;
+}
+.share:hover{background:rgba(110,231,160,.08)}
+.or{font-size:13.5px;color:var(--dim);margin:clamp(30px,6vw,42px) 0 0;font-weight:500}
+.reserve + .or + .dl{margin-top:14px}
+@media (max-width:480px){
+  .grid2{grid-template-columns:1fr}
+  .phone2{grid-template-columns:104px 1fr}
+}
+
 
 .signups{margin:clamp(30px,6vw,46px) 0 0;font-size:13.5px;color:var(--dim);font-weight:500}
 .signups b{color:var(--mint);font-weight:700;font-variant-numeric:tabular-nums}
@@ -325,6 +409,59 @@ footer{
       <div class="cell"><div class="v" id="s">00</div><div class="k" data-t="secs"></div></div>
     </div>
 
+    <div class="reserve" id="reserve">
+      <div class="r-badge" data-t="rBadge"></div>
+      <h2 class="r-head" data-t="rHead"></h2>
+      <p class="r-sub" data-t="rSub"></p>
+
+      <form id="form" novalidate>
+        <label class="tagfield" for="tag" dir="ltr">
+          <span class="at">@</span>
+          <input id="tag" type="text" inputmode="text" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" maxlength="20" data-ph="tagPh" aria-describedby="taghint">
+          <span class="tagstate" id="tagstate" aria-hidden="true"></span>
+        </label>
+        <p class="taghint" id="taghint" aria-live="polite"></p>
+
+        <div class="grid2">
+          <input id="name" class="inp" type="text" autocomplete="name" maxlength="80" data-ph="namePh" data-al="namePh">
+          <input id="email" class="inp" type="email" autocomplete="email" maxlength="254" data-ph="emailPh" data-al="emailPh">
+        </div>
+        <div class="phone2" dir="ltr">
+          <select id="cc" class="inp cc" data-al="ccLabel">
+            <option value="+213" selected>🇩🇿 +213</option>
+            <option value="+33">🇫🇷 +33</option>
+            <option value="+44">🇬🇧 +44</option>
+            <option value="+216">🇹🇳 +216</option>
+            <option value="+212">🇲🇦 +212</option>
+            <option value="+32">🇧🇪 +32</option>
+            <option value="+41">🇨🇭 +41</option>
+            <option value="+49">🇩🇪 +49</option>
+            <option value="+34">🇪🇸 +34</option>
+            <option value="+39">🇮🇹 +39</option>
+            <option value="+1">🇺🇸🇨🇦 +1</option>
+            <option value="+971">🇦🇪 +971</option>
+            <option value="+966">🇸🇦 +966</option>
+            <option value="+974">🇶🇦 +974</option>
+            <option value="+90">🇹🇷 +90</option>
+          </select>
+          <input id="phone" class="inp" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="20" data-ph="phonePh" data-al="phonePh">
+        </div>
+
+        <button class="submit" type="submit" data-t="cta"></button>
+        <p class="reassure" data-t="reassure"></p>
+        <p class="msg" id="msg" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="done" id="done" hidden>
+        <div class="tick"><svg viewBox="0 0 24 24"><path d="M4 12.8 9.2 18 20 6.6"/></svg></div>
+        <h2 id="doneH"></h2>
+        <p class="fnum"><span data-t="founderLabel"></span> <b id="doneNum"></b></p>
+        <p data-t="doneP"></p>
+        <a class="share" id="share" href="#" target="_blank" rel="noopener" data-t="share"></a>
+      </div>
+    </div>
+
+    <p class="or" data-t="orBeta"></p>
     <div class="dl" id="dl">
       <a id="dl-ios" href="#" rel="noopener">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -336,26 +473,6 @@ footer{
       </a>
     </div>
     <p class="dl-hint" id="dl-hint"></p>
-
-    <p class="form-intro" data-t="formIntro"></p>
-    <form id="form" novalidate>
-      <div class="field">
-        <input id="email" type="email" autocomplete="email" required data-ph="emailPh" aria-label="Email">
-        <button class="submit" type="submit" data-t="cta"></button>
-      </div>
-      <div class="phone-row">
-        <input id="phone" type="tel" autocomplete="tel" data-ph="phonePh" aria-label="Phone">
-      </div>
-      <p class="reassure" data-t="reassure"></p>
-      <p class="msg" id="msg" role="status" aria-live="polite"></p>
-    </form>
-
-    <div class="done" id="done" hidden>
-      <div class="tick"><svg viewBox="0 0 24 24"><path d="M4 12.8 9.2 18 20 6.6"/></svg></div>
-      <h2 data-t="doneH"></h2>
-      <p data-t="doneP"></p>
-    </div>
-
     <p class="signups" id="signups" hidden><b id="signupCount">0</b> <span data-t="counterLabel"></span></p>
 
   </section>
@@ -422,14 +539,25 @@ var T = {
     badge:"Bêta — 2026",
     pill:"Bientôt disponible",
     h1a:"Envoyez de l'argent", h1b:"en une seconde", h1c:"en Algérie",
-    lede:"Raoufi est un portefeuille algérien pour envoyer et recevoir de l'argent instantanément entre utilisateurs, par tag ou par QR code. La bêta est ouverte : téléchargez l'app ci-dessous.",
+    lede:"Raoufi est un portefeuille algérien pour envoyer et recevoir de l'argent instantanément, par @nom ou par QR code. Réservez votre @nom avant le lancement, ou testez la bêta dès maintenant.",
     days:"Jours", hours:"Heures", mins:"Minutes", secs:"Secondes",
-    emailPh:"Entrez votre email", phonePh:"Téléphone (facultatif)",
-    cta:"Être notifié",
-    reassure:"Soyez parmi les premiers informés. Aucun spam, promis.",
-    counterLabel:"personnes déjà sur la liste",
-    doneH:"Vous êtes sur la liste.",
-    doneP:"On vous écrit dès qu'une place se libère. Vérifiez vos spams — l'email vient de raoufi.app.",
+    emailPh:"Email", phonePh:"Téléphone", namePh:"Nom complet", tagPh:"votrenom", ccLabel:"Indicatif pays",
+    rBadge:"Membres fondateurs", rHead:"Réservez votre @nom avant le lancement.",
+    rSub:"Votre @nom, c'est votre adresse pour recevoir de l'argent sur Raoufi. Gratuit, et chaque @nom n'existe qu'une fois.",
+    cta:"Réserver mon @nom",
+    reassure:"Gratuit. Aucun spam. On vous prévient le jour du lancement.",
+    counterLabel:"membres fondateurs",
+    founderLabel:"Membre fondateur",
+    doneHt:"@{tag} est à vous.",
+    doneP:"On vous écrit le jour du lancement. En attendant, vous pouvez déjà tester la bêta ci-dessous.",
+    share:"Inviter un ami sur WhatsApp",
+    shareMsg:"Je viens de réserver mon @nom sur Raoufi, l'appli pour envoyer de l'argent en une seconde en Algérie. Réserve le tien avant qu'il soit pris : https://raoufi.app",
+    orBeta:"Ou testez la bêta dès maintenant (argent fictif) :",
+    tagShort:"3 caractères minimum, en commençant par une lettre.",
+    tagChars:"Lettres, chiffres, point ou tiret bas uniquement.",
+    tagChecking:"Vérification…", tagOk:"@{tag} est disponible.", tagTaken:"@{tag} est déjà pris ou non autorisé. Essayez une variante.",
+    errName:"Entrez votre nom complet.", errPhone:"Entrez un numéro valide.", errTag:"Choisissez un @nom disponible.",
+    errCode:"L'indicatif ne correspond pas au numéro.", errAlready:"Cet email a déjà réservé @{tag}.",
     featHead:"Ce que Raoufi fera",
     featSub:"Fonctionnalités en cours de test avec nos premiers utilisateurs.",
     f1t:"Transferts instantanés", f1d:"Envoyez et recevez de l'argent entre comptes Raoufi en temps réel.",
@@ -452,14 +580,25 @@ var T = {
     badge:"نسخة تجريبية — 2026",
     pill:"قريباً",
     h1a:"صيفط الدراهم", h1b:"في ثانية", h1c:"في الجزائر",
-    lede:"راوفي محفظة جزائرية باش تصيفط وتستقبل الدراهم دغيا بين المستعملين، بالتاڤ ولا بكود QR. النسخة التجريبية مفتوحة: حمّل التطبيق من تحت.",
+    lede:"راوفي محفظة جزائرية باش تصيفط وتستقبل الدراهم دغيا، بـ@الاسم ولا بكود QR. احجز @الاسم تاعك قبل الإطلاق، ولا جرّب النسخة التجريبية دوكا.",
     days:"يوم", hours:"ساعة", mins:"دقيقة", secs:"ثانية",
-    emailPh:"دخّل الإيميل تاعك", phonePh:"رقم الهاتف (اختياري)",
-    cta:"علّمني",
-    reassure:"كون من الأوائل لي يعلمو. بلا سبام، نوعدك.",
-    counterLabel:"واحد راهم في القائمة",
-    doneH:"راك في القائمة.",
-    doneP:"نكتبولك كي تتفكّ بلاصة. شوف في السبام — الإيميل يجي من raoufi.app.",
+    emailPh:"الإيميل", phonePh:"رقم الهاتف", namePh:"الاسم الكامل", tagPh:"اسمك", ccLabel:"رمز البلد",
+    rBadge:"الأعضاء المؤسسين", rHead:"احجز @الاسم تاعك قبل الإطلاق.",
+    rSub:"@الاسم هو العنوان تاعك باش تستقبل الدراهم في راوفي. بلاش، وكل @اسم كاين مرة وحدة برك.",
+    cta:"احجز @الاسم تاعي",
+    reassure:"بلاش. بلا سبام. نعلموك نهار الإطلاق.",
+    counterLabel:"عضو مؤسس",
+    founderLabel:"عضو مؤسس",
+    doneHt:"@{tag} ولّى تاعك.",
+    doneP:"نكتبولك نهار الإطلاق. في هاد الوقت، تقدر تجرّب النسخة التجريبية من تحت.",
+    share:"عيّط لصاحبك في واتساب",
+    shareMsg:"حجزت @الاسم تاعي في راوفي، التطبيق باش تصيفط الدراهم في ثانية في الجزائر. احجز تاعك قبل ما يدّوه: https://raoufi.app",
+    orBeta:"ولا جرّب النسخة التجريبية دوكا (دراهم وهمية):",
+    tagShort:"3 حروف على الأقل، ويبدا بحرف.",
+    tagChars:"حروف لاتينية، أرقام، نقطة ولا _ برك.",
+    tagChecking:"جاري التحقق…", tagOk:"@{tag} متوفر.", tagTaken:"@{tag} محجوز ولا ماشي مسموح. جرّب اسم آخر.",
+    errName:"دخّل الاسم الكامل.", errPhone:"دخّل رقم صحيح.", errTag:"اختار @اسم متوفر.",
+    errCode:"رمز البلد ما يوافقش الرقم.", errAlready:"هاد الإيميل ديجا حجز @{tag}.",
     featHead:"واش راح يدير راوفي",
     featSub:"خدمات راهي في مرحلة التجريب مع أول المستعملين.",
     f1t:"تحويل فوري", f1d:"صيفط واستقبل الدراهم بين حسابات راوفي في الوقت الحقيقي.",
@@ -482,14 +621,25 @@ var T = {
     badge:"Beta — 2026",
     pill:"Coming soon",
     h1a:"Send money", h1b:"in one second", h1c:"in Algeria",
-    lede:"Raoufi is an Algerian wallet for sending and receiving money instantly between users, by tag or QR code. The beta is open: download the app below.",
+    lede:"Raoufi is an Algerian wallet for sending and receiving money instantly, by @name or QR code. Reserve your @name before launch, or try the beta now.",
     days:"Days", hours:"Hours", mins:"Minutes", secs:"Seconds",
-    emailPh:"Enter your email", phonePh:"Phone (optional)",
-    cta:"Notify me",
-    reassure:"Be among the first to know. No spam, promise.",
-    counterLabel:"people already on the list",
-    doneH:"You're on the list.",
-    doneP:"We'll email you when a place opens up. Check your spam — the email comes from raoufi.app.",
+    emailPh:"Email", phonePh:"Phone number", namePh:"Full name", tagPh:"yourname", ccLabel:"Country code",
+    rBadge:"Founding members", rHead:"Reserve your @name before launch.",
+    rSub:"Your @name is your address for receiving money on Raoufi. It's free, and each @name exists only once.",
+    cta:"Reserve my @name",
+    reassure:"Free. No spam. We'll tell you on launch day.",
+    counterLabel:"founding members",
+    founderLabel:"Founding member",
+    doneHt:"@{tag} is yours.",
+    doneP:"We'll email you on launch day. Meanwhile, you can already try the beta below.",
+    share:"Invite a friend on WhatsApp",
+    shareMsg:"I just reserved my @name on Raoufi, the app for sending money in one second in Algeria. Grab yours before it's taken: https://raoufi.app",
+    orBeta:"Or try the beta now (test money only):",
+    tagShort:"At least 3 characters, starting with a letter.",
+    tagChars:"Letters, numbers, dot or underscore only.",
+    tagChecking:"Checking…", tagOk:"@{tag} is available.", tagTaken:"@{tag} is taken or not allowed. Try a variation.",
+    errName:"Enter your full name.", errPhone:"Enter a valid number.", errTag:"Choose an available @name.",
+    errCode:"The country code doesn't match the number.", errAlready:"This email already reserved @{tag}.",
     featHead:"What Raoufi will do",
     featSub:"Features currently in testing with our first users.",
     f1t:"Instant transfers", f1d:"Send and receive money between Raoufi accounts in real time.",
@@ -523,6 +673,10 @@ function apply(l){
   document.querySelectorAll("[data-ph]").forEach(function(el){
     el.placeholder=t[el.getAttribute("data-ph")];
   });
+  document.querySelectorAll("[data-al]").forEach(function(el){
+    el.setAttribute("aria-label",t[el.getAttribute("data-al")]);
+  });
+  if(typeof refreshTagHint==="function")refreshTagHint();
   document.querySelectorAll(".langs button").forEach(function(b){
     b.setAttribute("aria-pressed",String(b.dataset.lang===l));
   });
@@ -592,31 +746,108 @@ function loadCount(){
 }
 loadCount();
 
-/* signup */
+/* @tag reservation */
+var tagEl=document.getElementById("tag"),
+    tagField=document.querySelector(".tagfield"),
+    tagState=document.getElementById("tagstate"),
+    tagHint=document.getElementById("taghint");
+var TAG_RE=/^[a-z][a-z0-9_.]{2,19}$/;
+var tagStatus="empty", tagTimer=null, tagReq=0;
+
+function rpc(name,body){
+  return fetch(SUPABASE_URL+"/rest/v1/rpc/"+name,{
+    method:"POST",
+    headers:{"apikey":SUPABASE_ANON,"Authorization":"Bearer "+SUPABASE_ANON,"Content-Type":"application/json"},
+    body:JSON.stringify(body)
+  }).then(function(r){return r.ok?r.json():Promise.reject(new Error(r.status));});
+}
+function cleanTag(v){return (v||"").toLowerCase().replace(/^@+/,"").replace(/[^a-z0-9_.]/g,"").slice(0,20);}
+function localTagProblem(t){
+  if(!t)return "empty";
+  if(!/^[a-z]/.test(t)||t.length<3)return "short";
+  if(!TAG_RE.test(t)||/[._]{2}/.test(t)||/[._]$/.test(t))return "chars";
+  return null;
+}
+function setTagUI(status){
+  tagStatus=status;var t=T[lang],tag=tagEl.value;
+  tagField.classList.toggle("ok",status==="ok");
+  tagField.classList.toggle("bad",status==="taken"||status==="short"||status==="chars");
+  tagState.className="tagstate"+(status==="ok"?" ok":status==="busy"?" busy":(status==="taken"||status==="short"||status==="chars")?" bad":"");
+  tagState.textContent=status==="ok"?"✓":(status==="taken"||status==="short"||status==="chars")?"✕":"";
+  var msg="",cls="taghint";
+  if(status==="ok"){msg=t.tagOk.replace("{tag}",tag);cls+=" ok";}
+  else if(status==="taken"){msg=t.tagTaken.replace("{tag}",tag);cls+=" bad";}
+  else if(status==="short"){msg=t.tagShort;cls+=" bad";}
+  else if(status==="chars"){msg=t.tagChars;cls+=" bad";}
+  else if(status==="busy"){msg=t.tagChecking;}
+  tagHint.className=cls;tagHint.textContent=msg;
+}
+function refreshTagHint(){ if(tagEl)setTagUI(tagStatus); }
+function checkTag(){
+  var v=cleanTag(tagEl.value);
+  if(v!==tagEl.value)tagEl.value=v;
+  clearTimeout(tagTimer);
+  var p=localTagProblem(v);
+  if(p==="empty"){setTagUI("empty");return;}
+  if(p){setTagUI(p);return;}
+  setTagUI("busy");
+  var my=++tagReq;
+  tagTimer=setTimeout(function(){
+    rpc("tag_available",{p_tag:v}).then(function(ok){
+      if(my!==tagReq)return;
+      setTagUI(ok===true?"ok":"taken");
+    }).catch(function(){ if(my===tagReq)setTagUI("empty"); });
+  },420);
+}
+tagEl.addEventListener("input",checkTag);
+
+function mark(el,bad){el.classList.toggle("bad",!!bad);}
+
 form.addEventListener("submit",function(e){
   e.preventDefault();
   var t=T[lang];
-  var email=document.getElementById("email").value.trim();
-  var phone=document.getElementById("phone").value.trim();
-  var btn=form.querySelector("button.submit");
+  var tag=cleanTag(tagEl.value),
+      nameEl=document.getElementById("name"),
+      emailEl=document.getElementById("email"),
+      phoneEl=document.getElementById("phone"),
+      cc=document.getElementById("cc").value,
+      name=nameEl.value.trim().replace(/\s+/g," "),
+      email=emailEl.value.trim().toLowerCase(),
+      phone=phoneEl.value.trim(),
+      btn=form.querySelector("button.submit");
+  msgEl.className="msg";msgEl.textContent="";
+  [nameEl,emailEl,phoneEl].forEach(function(x){mark(x,false);});
 
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(email)){
-    msgEl.className="msg err";msgEl.textContent=t.errEmail;return;
+  if(localTagProblem(tag)||tagStatus==="taken"){
+    msgEl.className="msg err";msgEl.textContent=t.errTag;tagEl.focus();return;
   }
-  btn.disabled=true;msgEl.className="msg";msgEl.textContent=t.sending;
+  if(name.length<2){mark(nameEl,true);msgEl.className="msg err";msgEl.textContent=t.errName;nameEl.focus();return;}
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(email)){mark(emailEl,true);msgEl.className="msg err";msgEl.textContent=t.errEmail;emailEl.focus();return;}
+  if(phone.replace(/\D/g,"").length<8){mark(phoneEl,true);msgEl.className="msg err";msgEl.textContent=t.errPhone;phoneEl.focus();return;}
 
-  fetch(SUPABASE_URL+"/rest/v1/waitlist",{
-    method:"POST",
-    headers:{"apikey":SUPABASE_ANON,"Authorization":"Bearer "+SUPABASE_ANON,
-             "Content-Type":"application/json","Prefer":"return=minimal"},
-    body:JSON.stringify({
-      email:email.toLowerCase(),phone:phone||null,locale:lang,
-      source:new URLSearchParams(location.search).get("src")||"site"
-    })
-  }).then(function(r){
-    if(r.ok){form.hidden=true;doneEl.hidden=false;loadCount();return;}
-    if(r.status===409){msgEl.className="msg err";msgEl.textContent=t.errDupe;btn.disabled=false;return;}
-    throw new Error(r.status);
+  btn.disabled=true;msgEl.textContent=t.sending;
+  rpc("reserve_tag",{
+    p_full_name:name,p_email:email,p_phone:phone,p_tag:tag,
+    p_locale:lang,p_source:new URLSearchParams(location.search).get("src")||"site",
+    p_country_code:cc
+  }).then(function(res){
+    if(res&&res.ok){
+      form.hidden=true;
+      document.getElementById("doneH").textContent=t.doneHt.replace("{tag}",res.tag);
+      document.getElementById("doneNum").textContent="#"+res.founder_number;
+      document.getElementById("share").href="https://wa.me/?text="+encodeURIComponent(t.shareMsg);
+      doneEl.hidden=false;loadCount();
+      return;
+    }
+    var err=res&&res.error, m=t.errNet;
+    if(err==="tag_taken"){setTagUI("taken");m=t.errTag;tagEl.focus();}
+    else if(err==="invalid_tag"){setTagUI("chars");m=t.errTag;}
+    else if(err==="invalid_name"){mark(nameEl,true);m=t.errName;}
+    else if(err==="invalid_email"){mark(emailEl,true);m=t.errEmail;}
+    else if(err==="invalid_phone"){mark(phoneEl,true);m=t.errPhone;}
+    else if(err==="country_code_mismatch"||err==="invalid_country_code"){mark(phoneEl,true);m=t.errCode;}
+    else if(err==="already_reserved"){m=t.errAlready.replace("{tag}",res.tag||"");}
+    msgEl.className="msg err";msgEl.textContent=m;btn.disabled=false;
   }).catch(function(){
     msgEl.className="msg err";msgEl.textContent=t.errNet;btn.disabled=false;
   });
