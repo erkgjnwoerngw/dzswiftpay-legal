@@ -292,6 +292,10 @@ select.inp option{background:#0B1E14;color:var(--fg)}
 .reserve .reassure{text-align:center;font-size:12.5px;margin-top:12px}
 .reserve .msg{text-align:center}
 .reserve .done{margin:0;background:none;border:0;padding:6px 0 0;text-align:center}
+.done .sent{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mint);background:rgba(110,231,160,.1);border:1px solid rgba(110,231,160,.3);border-radius:999px;padding:5px 12px;margin:0 0 12px}
+body[dir="rtl"] .done .sent{letter-spacing:0;text-transform:none;font-size:13.5px}
+.reserve .done .tick{width:64px;height:64px;animation:pop .35s ease-out}
+@keyframes pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
 .done .fnum{font-size:15px;color:var(--fg);margin:0 0 10px}
 .done .fnum b{color:var(--mint);font-size:20px;font-variant-numeric:tabular-nums}
 .share{
@@ -454,6 +458,7 @@ footer{
 
       <div class="done" id="done" hidden>
         <div class="tick"><svg viewBox="0 0 24 24"><path d="M4 12.8 9.2 18 20 6.6"/></svg></div>
+        <p class="sent" data-t="sentOk"></p>
         <h2 id="doneH"></h2>
         <p class="fnum"><span data-t="founderLabel"></span> <b id="doneNum"></b></p>
         <p data-t="doneP"></p>
@@ -557,7 +562,7 @@ var T = {
     tagChars:"Lettres, chiffres, point ou tiret bas uniquement.",
     tagChecking:"Vérification…", tagOk:"@{tag} est disponible.", tagTaken:"@{tag} est déjà pris ou non autorisé. Essayez une variante.",
     errName:"Entrez votre nom complet.", errPhone:"Entrez un numéro valide.", errTag:"Choisissez un @nom disponible.",
-    errCode:"L'indicatif ne correspond pas au numéro.", errAlready:"Cet email a déjà réservé @{tag}.",
+    errCode:"L'indicatif ne correspond pas au numéro.", errAlready:"Vous êtes déjà inscrit avec cet email (@{tag}).", errPhoneUsed:"Ce numéro est déjà inscrit. Un seul @nom par numéro.", sentOk:"✓ Réservation envoyée",
     featHead:"Ce que Raoufi fera",
     featSub:"Fonctionnalités en cours de test avec nos premiers utilisateurs.",
     f1t:"Transferts instantanés", f1d:"Envoyez et recevez de l'argent entre comptes Raoufi en temps réel.",
@@ -598,7 +603,7 @@ var T = {
     tagChars:"حروف لاتينية، أرقام، نقطة ولا _ برك.",
     tagChecking:"جاري التحقق…", tagOk:"@{tag} متوفر.", tagTaken:"@{tag} محجوز ولا ماشي مسموح. جرّب اسم آخر.",
     errName:"دخّل الاسم الكامل.", errPhone:"دخّل رقم صحيح.", errTag:"اختار @اسم متوفر.",
-    errCode:"رمز البلد ما يوافقش الرقم.", errAlready:"هاد الإيميل ديجا حجز @{tag}.",
+    errCode:"رمز البلد ما يوافقش الرقم.", errAlready:"راك ديجا مسجّل بهاد الإيميل (@{tag}).", errPhoneUsed:"هاد الرقم ديجا مسجّل. @اسم واحد لكل رقم.", sentOk:"✓ تم إرسال الحجز",
     featHead:"واش راح يدير راوفي",
     featSub:"خدمات راهي في مرحلة التجريب مع أول المستعملين.",
     f1t:"تحويل فوري", f1d:"صيفط واستقبل الدراهم بين حسابات راوفي في الوقت الحقيقي.",
@@ -639,7 +644,7 @@ var T = {
     tagChars:"Letters, numbers, dot or underscore only.",
     tagChecking:"Checking…", tagOk:"@{tag} is available.", tagTaken:"@{tag} is taken or not allowed. Try a variation.",
     errName:"Enter your full name.", errPhone:"Enter a valid number.", errTag:"Choose an available @name.",
-    errCode:"The country code doesn't match the number.", errAlready:"This email already reserved @{tag}.",
+    errCode:"The country code doesn't match the number.", errAlready:"You're already signed up with this email (@{tag}).", errPhoneUsed:"This number is already signed up. One @name per number.", sentOk:"✓ Reservation sent",
     featHead:"What Raoufi will do",
     featSub:"Features currently in testing with our first users.",
     f1t:"Instant transfers", f1d:"Send and receive money between Raoufi accounts in real time.",
@@ -837,6 +842,7 @@ form.addEventListener("submit",function(e){
       document.getElementById("doneNum").textContent="#"+res.founder_number;
       document.getElementById("share").href="https://wa.me/?text="+encodeURIComponent(t.shareMsg);
       doneEl.hidden=false;loadCount();
+      document.getElementById("reserve").scrollIntoView({behavior:"smooth",block:"center"});
       return;
     }
     var err=res&&res.error, m=t.errNet;
@@ -846,7 +852,8 @@ form.addEventListener("submit",function(e){
     else if(err==="invalid_email"){mark(emailEl,true);m=t.errEmail;}
     else if(err==="invalid_phone"){mark(phoneEl,true);m=t.errPhone;}
     else if(err==="country_code_mismatch"||err==="invalid_country_code"){mark(phoneEl,true);m=t.errCode;}
-    else if(err==="already_reserved"){m=t.errAlready.replace("{tag}",res.tag||"");}
+    else if(err==="already_reserved"){mark(emailEl,true);m=t.errAlready.replace(" (@{tag})",res.tag?" (@"+res.tag+")":"").replace("{tag}",res.tag||"");}
+    else if(err==="phone_used"){mark(phoneEl,true);m=t.errPhoneUsed;phoneEl.focus();}
     msgEl.className="msg err";msgEl.textContent=m;btn.disabled=false;
   }).catch(function(){
     msgEl.className="msg err";msgEl.textContent=t.errNet;btn.disabled=false;
