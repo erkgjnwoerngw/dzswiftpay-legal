@@ -37,6 +37,8 @@
       <p class="intro" data-i18n="page_intro">Find answers to common questions below, or reach our support team directly by email.</p>
     </div>
 
+    <div class="beta-notice" style="border:1px solid rgba(110,231,160,.45);background:rgba(110,231,160,.08);border-radius:16px;padding:18px 20px;margin:0 0 24px;line-height:1.6" data-i18n-html="beta_notice"><p style="margin:0 0 10px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6EE7A0">Beta notice</p><p style="margin:0 0 6px;font-size:16px"><strong>Test version only: no real money transfers are available.</strong></p><p style="margin:0 0 12px;font-size:16px"><strong>Raoufi is in development and does not currently hold a payment service provider licence in Algeria.</strong></p><ul style="margin:0;padding-inline-start:20px"><li>Balances shown in the app are fictitious. They have no monetary value and cannot be deposited, withdrawn or exchanged for real money.</li><li>Raoufi is a wallet app in development, published by RAOUFI LTD, a company registered in the United Kingdom. Raoufi is not a bank and does not accept deposits.</li><li>During the beta, no fees are charged, no top-ups are possible and no identity documents are requested.</li><li>If anything else on this page conflicts with this notice, this notice applies.</li></ul></div>
+
     <!-- Contact card -->
     <a href="mailto:founder@raoufi.app" class="contact-card">
       <div class="contact-icon">✉️</div>
@@ -129,7 +131,7 @@
       </details>
       <details>
         <summary data-i18n="faq_3_4_q">Can I transfer to someone outside Raoufi?</summary>
-        <div class="faq-answer" data-i18n="faq_3_4_a">Currently, transfers are available between Raoufi account holders. We are working on additional payment methods. Mobile top-ups are available for supported Algerian network operators.</div>
+        <div class="faq-answer" data-i18n="faq_3_4_a">Currently, transfers are available between Raoufi account holders. We are working on additional payment methods.</div>
       </details>
     </div>
 
@@ -209,6 +211,7 @@
   window.TRANSLATIONS = {
     en: {
       doc_title: 'Help & Support — Raoufi',
+      beta_notice: "<p style=\"margin:0 0 10px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6EE7A0\">Beta notice</p><p style=\"margin:0 0 6px;font-size:16px\"><strong>Test version only: no real money transfers are available.</strong></p><p style=\"margin:0 0 12px;font-size:16px\"><strong>Raoufi is in development and does not currently hold a payment service provider licence in Algeria.</strong></p><ul style=\"margin:0;padding-inline-start:20px\"><li>Balances shown in the app are fictitious. They have no monetary value and cannot be deposited, withdrawn or exchanged for real money.</li><li>Raoufi is a wallet app in development, published by RAOUFI LTD, a company registered in the United Kingdom. Raoufi is not a bank and does not accept deposits.</li><li>During the beta, no fees are charged, no top-ups are possible and no identity documents are requested.</li><li>If anything else on this page conflicts with this notice, this notice applies.</li></ul>",
       nav_home: 'Home', nav_privacy: 'Privacy Policy',
       nav_terms: 'Terms of Service', nav_support: 'Support',
       page_eyebrow: 'Help Centre', page_title: 'Help & Support',
@@ -244,7 +247,7 @@
       faq_3_3_q: 'What are the daily transfer limits?',
       faq_3_3_a: 'Limits depend on your KYC verification tier. Unverified accounts have the lowest limits. Complete your KYC verification to unlock higher daily and monthly transfer limits. Current limits are displayed in the Transfer screen before you send.',
       faq_3_4_q: 'Can I transfer to someone outside Raoufi?',
-      faq_3_4_a: 'Currently, transfers are available between Raoufi account holders. We are working on additional payment methods. Mobile top-ups are available for supported Algerian network operators.',
+      faq_3_4_a: 'Currently, transfers are available between Raoufi account holders. We are working on additional payment methods.',
       faq_s4_title: 'Failed Payments',
       faq_4_1_q: 'My payment failed. What should I do?',
       faq_4_1_a: 'Check that you have sufficient balance and that you have not reached a daily or monthly limit. If the issue persists, contact us at <a href="mailto:founder@raoufi.app">founder@raoufi.app</a>.',
@@ -270,6 +273,7 @@
     },
     fr: {
       doc_title: 'Aide et assistance — Raoufi',
+      beta_notice: "<p style=\"margin:0 0 10px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6EE7A0\">Avis — version bêta</p><p style=\"margin:0 0 6px;font-size:16px\"><strong>Version de test uniquement : aucun transfert d’argent réel n’est disponible.</strong></p><p style=\"margin:0 0 12px;font-size:16px\"><strong>Raoufi est en phase de développement et ne dispose pas, à ce jour, d’un agrément de prestataire de services de paiement en Algérie.</strong></p><ul style=\"margin:0;padding-inline-start:20px\"><li>Les soldes affichés dans l’application sont fictifs. Ils n’ont aucune valeur monétaire et ne peuvent être ni déposés, ni retirés, ni échangés contre de l’argent réel.</li><li>Raoufi est une application de portefeuille en cours de développement, éditée par RAOUFI LTD, société immatriculée au Royaume-Uni. Raoufi n’est pas une banque et ne reçoit aucun dépôt.</li><li>Pendant la bêta, aucuns frais ne sont prélevés, aucune recharge n’est possible et aucune pièce d’identité n’est demandée.</li><li>En cas de contradiction avec le reste de cette page, le présent avis prévaut.</li></ul>",
       nav_home: 'Accueil', nav_privacy: 'Confidentialité',
       nav_terms: 'Conditions d\'utilisation', nav_support: 'Assistance',
       page_eyebrow: 'Centre d\'aide', page_title: 'Aide et assistance',
@@ -305,7 +309,7 @@
       faq_3_3_q: 'Quelles sont les limites journalières de virement ?',
       faq_3_3_a: 'Les limites dépendent de votre niveau de vérification KYC. Les comptes non vérifiés ont les limites les plus basses. Complétez votre vérification KYC pour débloquer des limites journalières et mensuelles plus élevées. Les limites actuelles sont affichées dans l\'écran de transfert avant l\'envoi.',
       faq_3_4_q: 'Puis-je transférer vers quelqu\'un extérieur à Raoufi ?',
-      faq_3_4_a: 'Actuellement, les transferts sont disponibles entre titulaires de comptes Raoufi. Nous travaillons à l\'ajout de méthodes de paiement supplémentaires. Les recharges mobiles sont disponibles pour les opérateurs algériens pris en charge.',
+      faq_3_4_a: 'Actuellement, les transferts sont disponibles entre titulaires de comptes Raoufi. Nous travaillons à l\'ajout de méthodes de paiement supplémentaires.',
       faq_s4_title: 'Paiements échoués',
       faq_4_1_q: 'Mon paiement a échoué. Que dois-je faire ?',
       faq_4_1_a: 'Vérifiez que vous avez un solde suffisant et que vous n\'avez pas atteint de limite journalière ou mensuelle. Si le problème persiste, contactez-nous à <a href="mailto:founder@raoufi.app">founder@raoufi.app</a>.',
@@ -331,6 +335,7 @@
     },
     ar: {
       doc_title: 'المساعدة والدعم — Raoufi',
+      beta_notice: "<p style=\"margin:0 0 10px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6EE7A0\">تنبيه — نسخة تجريبية</p><p style=\"margin:0 0 6px;font-size:16px\"><strong>نسخة تجريبية فقط: لا تتوفر أي تحويلات بأموال حقيقية.</strong></p><p style=\"margin:0 0 12px;font-size:16px\"><strong>تطبيق Raoufi في مرحلة التطوير ولا يحمل حالياً ترخيص مقدّم خدمات الدفع في الجزائر.</strong></p><ul style=\"margin:0;padding-inline-start:20px\"><li>الأرصدة المعروضة في التطبيق وهمية، ليست لها أي قيمة مالية ولا يمكن إيداعها أو سحبها أو استبدالها بأموال حقيقية.</li><li>Raoufi تطبيق محفظة قيد التطوير تنشره شركة RAOUFI LTD المسجّلة في المملكة المتحدة. Raoufi ليس بنكاً ولا يتلقى أي ودائع.</li><li>خلال المرحلة التجريبية، لا تُفرض أي رسوم، ولا يمكن شحن الرصيد، ولا تُطلب أي وثائق هوية.</li><li>في حال تعارض أي بند آخر في هذه الصفحة مع هذا التنبيه، يسري هذا التنبيه.</li></ul>",
       nav_home: 'الرئيسية', nav_privacy: 'سياسة الخصوصية',
       nav_terms: 'شروط الخدمة', nav_support: 'الدعم',
       page_eyebrow: 'مركز المساعدة', page_title: 'المساعدة والدعم',
@@ -366,7 +371,7 @@
       faq_3_3_q: 'ما حدود التحويل اليومية؟',
       faq_3_3_a: 'تعتمد الحدود على مستوى التحقق KYC. الحسابات غير المُتحقَّق منها لها أدنى الحدود. أتمّ التحقق من الهوية للحصول على حدود يومية وشهرية أعلى. تُعرض الحدود الحالية في شاشة التحويل قبل الإرسال.',
       faq_3_4_q: 'هل يمكنني التحويل لشخص خارج Raoufi؟',
-      faq_3_4_a: 'حالياً، التحويلات متاحة بين أصحاب حسابات Raoufi. نعمل على إضافة طرق دفع جديدة. تتوفر خدمة شحن الهاتف المحمول لمشغّلي الشبكات الجزائرية المدعومة.',
+      faq_3_4_a: 'حالياً، التحويلات متاحة بين أصحاب حسابات Raoufi. نعمل على إضافة طرق دفع جديدة.',
       faq_s4_title: 'المدفوعات الفاشلة',
       faq_4_1_q: 'فشل دفعي. ماذا أفعل؟',
       faq_4_1_a: 'تحقق من كفاية رصيدك وعدم تجاوزك الحد اليومي أو الشهري. إذا استمرت المشكلة، تواصل معنا على <a href="mailto:founder@raoufi.app">founder@raoufi.app</a>.',
