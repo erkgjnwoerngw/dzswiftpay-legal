@@ -290,6 +290,10 @@ select.inp option{background:#0B1E14;color:var(--fg)}
 .reserve .submit:disabled{opacity:.55;cursor:default}
 .reserve .submit:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
 .reserve .reassure{text-align:center;font-size:12.5px;margin-top:12px}
+.consent{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:12.5px;line-height:1.55;color:var(--dim);cursor:pointer;text-align:start}
+.consent input{flex:none;width:18px;height:18px;margin:1px 0 0;accent-color:var(--mint);cursor:pointer}
+.consent a{color:var(--mint);text-decoration:underline;white-space:nowrap}
+.consent.bad{color:#ff8a8a}
 .reserve .msg{text-align:center}
 .reserve .done{margin:0;background:none;border:0;padding:6px 0 0;text-align:center}
 .done .sent{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mint);background:rgba(110,231,160,.1);border:1px solid rgba(110,231,160,.3);border-radius:999px;padding:5px 12px;margin:0 0 12px}
@@ -451,7 +455,11 @@ footer{
           <input id="phone" class="inp" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="20" data-ph="phonePh" data-al="phonePh">
         </div>
 
-        <button class="submit" type="submit" data-t="cta"></button>
+        <label class="consent" for="consent">
+          <input id="consent" type="checkbox">
+          <span><span data-t="consentTxt"></span> <a href="privacy.html" target="_blank" rel="noopener" data-t="consentLink"></a></span>
+        </label>
+        <button class="submit" type="submit" data-t="cta" disabled></button>
         <p class="reassure" data-t="reassure"></p>
         <p class="msg" id="msg" role="status" aria-live="polite"></p>
       </form>
@@ -561,6 +569,7 @@ var T = {
     tagShort:"3 caractères minimum, en commençant par une lettre.",
     tagChars:"Lettres, chiffres, point ou tiret bas uniquement.",
     tagChecking:"Vérification…", tagOk:"@{tag} est disponible.", tagTaken:"@{tag} est déjà pris ou non autorisé. Essayez une variante.",
+    consentTxt:"J’accepte que mes données (nom, e-mail, téléphone, @nom) soient hébergées par les prestataires techniques de Raoufi, hors d’Algérie, pour le fonctionnement du service.", consentLink:"Politique de confidentialité", errConsent:"Cochez la case pour accepter l’hébergement de vos données.",
     errName:"Entrez votre nom complet.", errPhone:"Entrez un numéro valide.", errTag:"Choisissez un @nom disponible.",
     errCode:"L'indicatif ne correspond pas au numéro.", errAlready:"Vous êtes déjà inscrit avec cet email (@{tag}).", errPhoneUsed:"Ce numéro est déjà inscrit. Un seul @nom par numéro.", sentOk:"✓ Réservation envoyée",
     featHead:"Ce que Raoufi fera",
@@ -602,6 +611,7 @@ var T = {
     tagShort:"3 حروف على الأقل، ويبدا بحرف.",
     tagChars:"حروف لاتينية، أرقام، نقطة ولا _ برك.",
     tagChecking:"جاري التحقق…", tagOk:"@{tag} متوفر.", tagTaken:"@{tag} محجوز ولا ماشي مسموح. جرّب اسم آخر.",
+    consentTxt:"أوافق على استضافة بياناتي (الاسم، البريد الإلكتروني، الهاتف، @الاسم) لدى المزوّدين التقنيين لـ Raoufi خارج الجزائر، لتشغيل الخدمة.", consentLink:"سياسة الخصوصية", errConsent:"يرجى تحديد الخانة للموافقة على استضافة بياناتك.",
     errName:"دخّل الاسم الكامل.", errPhone:"دخّل رقم صحيح.", errTag:"اختار @اسم متوفر.",
     errCode:"رمز البلد ما يوافقش الرقم.", errAlready:"راك ديجا مسجّل بهاد الإيميل (@{tag}).", errPhoneUsed:"هاد الرقم ديجا مسجّل. @اسم واحد لكل رقم.", sentOk:"✓ تم إرسال الحجز",
     featHead:"واش راح يدير راوفي",
@@ -643,6 +653,7 @@ var T = {
     tagShort:"At least 3 characters, starting with a letter.",
     tagChars:"Letters, numbers, dot or underscore only.",
     tagChecking:"Checking…", tagOk:"@{tag} is available.", tagTaken:"@{tag} is taken or not allowed. Try a variation.",
+    consentTxt:"I agree that my data (name, email, phone, @name) is hosted by Raoufi’s technical providers, outside Algeria, to run the service.", consentLink:"Privacy policy", errConsent:"Tick the box to accept how your data is hosted.",
     errName:"Enter your full name.", errPhone:"Enter a valid number.", errTag:"Choose an available @name.",
     errCode:"The country code doesn't match the number.", errAlready:"You're already signed up with this email (@{tag}).", errPhoneUsed:"This number is already signed up. One @name per number.", sentOk:"✓ Reservation sent",
     featHead:"What Raoufi will do",
@@ -807,6 +818,11 @@ function checkTag(){
 tagEl.addEventListener("input",checkTag);
 
 function mark(el,bad){el.classList.toggle("bad",!!bad);}
+var consentEl=document.getElementById("consent");
+consentEl.addEventListener("change",function(){
+  form.querySelector("button.submit").disabled=!consentEl.checked;
+  consentEl.parentNode.classList.remove("bad");
+});
 
 form.addEventListener("submit",function(e){
   e.preventDefault();
@@ -829,12 +845,13 @@ form.addEventListener("submit",function(e){
   if(name.length<2){mark(nameEl,true);msgEl.className="msg err";msgEl.textContent=t.errName;nameEl.focus();return;}
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(email)){mark(emailEl,true);msgEl.className="msg err";msgEl.textContent=t.errEmail;emailEl.focus();return;}
   if(phone.replace(/\D/g,"").length<8){mark(phoneEl,true);msgEl.className="msg err";msgEl.textContent=t.errPhone;phoneEl.focus();return;}
+  if(!consentEl.checked){consentEl.parentNode.classList.add("bad");msgEl.className="msg err";msgEl.textContent=t.errConsent;consentEl.focus();return;}
 
   btn.disabled=true;msgEl.textContent=t.sending;
   rpc("reserve_tag",{
     p_full_name:name,p_email:email,p_phone:phone,p_tag:tag,
     p_locale:lang,p_source:new URLSearchParams(location.search).get("src")||"site",
-    p_country_code:cc
+    p_country_code:cc,p_consent:true
   }).then(function(res){
     if(res&&res.ok){
       form.hidden=true;
