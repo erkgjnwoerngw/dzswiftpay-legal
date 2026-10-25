@@ -540,7 +540,7 @@ footer{
    ================================================================ */
 var LAUNCH_DATE   = "2026-12-01T09:00:00+01:00";   // countdown target, Algiers time
 var SUPABASE_URL  = "https://xkudmlkfrtucgrrolbdl.supabase.co";
-var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhrdWRtbGtmcnR1Y2dycm9sYmRsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA1NDg2MzUsImV4cCI6MjA4NjEyNDYzNX0.HHg7SdGAqGEA-7I2Lhh5LUG4krEuYxq9z39CQL9okwQ";
+var SUPABASE_ANON = "sb_publishable_pzbKAXvCYyf_Hiz6Vk26QQ_4vMaI1yO";
 var SHOW_COUNT_FROM = 250;   // signup counter stays hidden below this
 var IOS_URL     = "https://testflight.apple.com/join/F8tC8QSz";
 var ANDROID_URL = "https://github.com/erkgjnwoerngw/dzswiftpay-legal/releases/latest/download/raoufi.apk";
@@ -748,10 +748,17 @@ setupDownloads();
 })();
 
 /* signup count */
+/* New publishable keys (sb_publishable_...) go in "apikey" only;
+   old anon keys (eyJ...) also need the Authorization header. */
+function sbHeaders(){
+  var h={"apikey":SUPABASE_ANON,"Content-Type":"application/json"};
+  if(/^eyJ/.test(SUPABASE_ANON))h["Authorization"]="Bearer "+SUPABASE_ANON;
+  return h;
+}
 function loadCount(){
   fetch(SUPABASE_URL+"/rest/v1/rpc/waitlist_count",{
     method:"POST",
-    headers:{"apikey":SUPABASE_ANON,"Authorization":"Bearer "+SUPABASE_ANON,"Content-Type":"application/json"},
+    headers:sbHeaders(),
     body:"{}"
   }).then(function(r){return r.ok?r.json():Promise.reject();})
     .then(function(n){
@@ -773,7 +780,7 @@ var tagStatus="empty", tagTimer=null, tagReq=0;
 function rpc(name,body){
   return fetch(SUPABASE_URL+"/rest/v1/rpc/"+name,{
     method:"POST",
-    headers:{"apikey":SUPABASE_ANON,"Authorization":"Bearer "+SUPABASE_ANON,"Content-Type":"application/json"},
+    headers:sbHeaders(),
     body:JSON.stringify(body)
   }).then(function(r){return r.ok?r.json():Promise.reject(new Error(r.status));});
 }
